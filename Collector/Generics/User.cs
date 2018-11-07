@@ -11,6 +11,48 @@ namespace Collector.Generics
     {
         public string ID;
         public string ScreenName;
-        public string Name;
+        public string UserName;
+        //public String EmojifiedNameJson;
+
+        public string Id_str
+        {
+            get => ID;
+
+            set
+            {
+                ID = value;
+            }
+        }
+
+        public string screen_name
+        {
+            get => ScreenName;
+
+            set
+            {
+                ScreenName = value;
+            }
+        }
+
+        public string name
+        {
+            get => UserName;
+
+            set
+            {
+                UserName = value;
+            }
+        }
+
+        //public string emojified_name
+        //{
+        //    get => EmojifiedNameJson;
+
+        //    set
+        //    {
+        //        EmojifiedNameJson = value;
+        //    }
+        //}
+
     }
 }

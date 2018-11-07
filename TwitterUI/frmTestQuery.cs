@@ -45,21 +45,8 @@ namespace TwitterUI
         private void frmTestQuery_Load(object sender, EventArgs e)
         {
             lblMessage.Text = "Initiating...";
-
-            System.Threading.Thread.Sleep(1000);
-
-            TwitterNetworkUtil = new Net();
-            TwitterNetworkUtil.Query = TwitterQuery;
-
-            bw = new BackgroundWorker();
-            bw.WorkerReportsProgress = true;
-
-            bw.DoWork += Bw_DoWork;
-            bw.ProgressChanged += Bw_ProgressChanged;
-
-            lblMessage.Text = "Starting...";
-            bw.RunWorkerAsync();
-            timer1.Start();
+            timer2.Start();
+          
         }
 
         private void Bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -168,9 +155,34 @@ namespace TwitterUI
         }
 
         float cpu, ram;
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            timer2.Stop();
+
+            TwitterNetworkUtil = new Net();
+            TwitterNetworkUtil.Query = TwitterQuery;
+
+            bw = new BackgroundWorker();
+            bw.WorkerReportsProgress = true;
+
+            bw.DoWork += Bw_DoWork;
+            bw.ProgressChanged += Bw_ProgressChanged;
+
+            lblMessage.Text = "Starting...";
+            bw.RunWorkerAsync();
+            timer1.Start();
+
+        }
+
+        long secElapsed = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblMessage.Text += ".";
+            secElapsed += 5000000;
+            TimeSpan elapsed = new TimeSpan(secElapsed);
+
+            lblMessage.Text = "Tweets downloaded: " + sampleTweets.Count.ToString() + Environment.NewLine + "Time elapsed: " + elapsed.TotalSeconds.ToString();
+
             float c = Performance.GetProcessorUsage();
             float r = Performance.GetMemoryUsage();
 

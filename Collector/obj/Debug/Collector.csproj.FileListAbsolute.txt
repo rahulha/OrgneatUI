@@ -6,7 +6,6 @@ F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Debug\Newtonsoft.Json.dll
 F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Debug\HtmlAgilityPack.pdb
 F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Debug\HtmlAgilityPack.xml
 F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Debug\Newtonsoft.Json.xml
-F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csprojResolveAssemblyReference.cache
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csproj.CoreCompileInputs.cache
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csproj.CopyComplete
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.exe

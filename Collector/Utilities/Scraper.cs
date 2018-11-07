@@ -124,11 +124,20 @@ namespace Collector
                     tweet.Permalink = getAttributeValue(div, "data-permalink-path");
                     tweet.ConversationID = getAttributeValue(div, "data-conversation-id");
                     tweet.Nonce = getAttributeValue(div, "data-tweet-nonce");
-                    tweet.StatInitialized = Convert.ToBoolean(getAttributeValue(div, "data-tweet-stat-initialized"));
+
+                    //try
+                    //{
+                    //    tweet.StatInitialized = Convert.ToBoolean(getAttributeValue(div, "data-tweet-stat-initialized"));
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    Console.WriteLine(ex.Message);
+                    //}
+
 
                     //User data
                     tweet.Author.ScreenName = getAttributeValue(div, "data-screen-name");
-                    tweet.Author.Name = getAttributeValue(div, "data-name");
+                    tweet.Author.UserName = getAttributeValue(div, "data-name");
                     tweet.Author.ID = getAttributeValue(div, "data-user-id");
                     tweet.isVerified = getNodeInnerText(div, ".//span[@class='UserBadges']//span[@class='u-hiddenVisually']").Contains(" Retweeted ");
 

@@ -54,7 +54,7 @@ namespace Collector.Generics
 
         public string Nonce;
 
-        public bool StatInitialized;
+        //public bool StatInitialized;
 
         public string itemID;
 

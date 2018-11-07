@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "TwitterHelper", "TwitterHelper\", "{7A2CA741-37BA-4423-A849-DCD905D65570}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_23457"
+		Debug.AspNetCompiler.PhysicalPath = "TwitterHelper\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23457\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_23457"
+		Release.AspNetCompiler.PhysicalPath = "TwitterHelper\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_23457\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "23457"
+		SlnRelativePath = "TwitterHelper\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collector", "Collector\Collector.csproj", "{27F12C49-D02A-4169-9B04-829A3F9FD360}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite1(1)", "WebSite1\", "{DAFD3756-8919-42F5-8BFB-74D214BB4FF0}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_62935"
+		Debug.AspNetCompiler.PhysicalPath = "WebSite1\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62935\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_62935"
+		Release.AspNetCompiler.PhysicalPath = "WebSite1\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_62935\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "62935"
+		SlnRelativePath = "WebSite1\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterUI", "TwitterUI\TwitterUI.csproj", "{169159CC-695B-429E-B459-95938ADD21A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A2CA741-37BA-4423-A849-DCD905D65570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A2CA741-37BA-4423-A849-DCD905D65570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A2CA741-37BA-4423-A849-DCD905D65570}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A2CA741-37BA-4423-A849-DCD905D65570}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{27F12C49-D02A-4169-9B04-829A3F9FD360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F12C49-D02A-4169-9B04-829A3F9FD360}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F12C49-D02A-4169-9B04-829A3F9FD360}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F12C49-D02A-4169-9B04-829A3F9FD360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAFD3756-8919-42F5-8BFB-74D214BB4FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAFD3756-8919-42F5-8BFB-74D214BB4FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAFD3756-8919-42F5-8BFB-74D214BB4FF0}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAFD3756-8919-42F5-8BFB-74D214BB4FF0}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{169159CC-695B-429E-B459-95938ADD21A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169159CC-695B-429E-B459-95938ADD21A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169159CC-695B-429E-B459-95938ADD21A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169159CC-695B-429E-B459-95938ADD21A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAFC8DC1-6311-4968-9D2F-A6007ECA3994}
+	EndGlobalSection
+EndGlobal

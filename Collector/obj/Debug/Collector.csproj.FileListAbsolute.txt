@@ -10,3 +10,4 @@ F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csproj.Core
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csproj.CopyComplete
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.exe
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.pdb
+F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Debug\Collector.csprojResolveAssemblyReference.cache

@@ -30,7 +30,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSpeed = new System.Windows.Forms.Label();
@@ -56,16 +55,10 @@
             this.lblLTDT = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblLargestDiff = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.Location = new System.Drawing.Point(323, 26);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(701, 45);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Click here";
             // 
             // label1
             // 
@@ -215,9 +208,9 @@
             // 
             this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblMessage.Location = new System.Drawing.Point(32, 355);
+            this.lblMessage.Location = new System.Drawing.Point(32, 368);
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(992, 163);
+            this.lblMessage.Size = new System.Drawing.Size(992, 150);
             this.lblMessage.TabIndex = 8;
             this.lblMessage.Text = "Message";
             // 
@@ -277,7 +270,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
@@ -285,11 +278,40 @@
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(558, 147);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(275, 17);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Largest Time difference between 2 tweets:";
+            // 
+            // lblLargestDiff
+            // 
+            this.lblLargestDiff.AutoSize = true;
+            this.lblLargestDiff.Location = new System.Drawing.Point(849, 147);
+            this.lblLargestDiff.Name = "lblLargestDiff";
+            this.lblLargestDiff.Size = new System.Drawing.Size(16, 17);
+            this.lblLargestDiff.TabIndex = 3;
+            this.lblLargestDiff.Text = "0";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Location = new System.Drawing.Point(326, 26);
+            this.linkLabel1.Multiline = true;
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.ReadOnly = true;
+            this.linkLabel1.Size = new System.Drawing.Size(698, 47);
+            this.linkLabel1.TabIndex = 10;
+            // 
             // frmTestQuery
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1057, 534);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.lblFileSize);
             this.Controls.Add(this.label19);
@@ -302,6 +324,7 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblETASingle);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblLargestDiff);
             this.Controls.Add(this.lblLTDT);
             this.Controls.Add(this.lblFTDT);
             this.Controls.Add(this.lblEstimatedTweets);
@@ -313,7 +336,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.linkLabel1);
             this.Name = "frmTestQuery";
             this.Text = "frmTestQuery";
             this.Load += new System.EventHandler(this.frmTestQuery_Load);
@@ -342,12 +364,14 @@
         public System.Windows.Forms.Label lblEstimatedThreads;
         public System.Windows.Forms.Label lblPUtilization;
         public System.Windows.Forms.Label lblFileSize;
-        public System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lblFTDT;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.Label lblLTDT;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label lblLargestDiff;
+        private System.Windows.Forms.TextBox linkLabel1;
     }
 }

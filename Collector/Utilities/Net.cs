@@ -31,6 +31,11 @@ namespace Collector.Utilities
                 this.Criteria = Query.ToString();
 
             ModifiedURL = string.Format(tempURL, new string[] { this.Criteria, MaxPosition });
+
+            Uri myUri = new Uri(ModifiedURL, UriKind.RelativeOrAbsolute);
+
+            ModifiedURL = myUri.ToString();
+
             return ModifiedURL;
         }
 
@@ -43,13 +48,19 @@ namespace Collector.Utilities
             c.Headers.Set("Accept", "application/json, text/javascript, */*; q=0.01");
             c.Headers.Set("Accept-Language", "de,en-US;q=0.7,en;q=0.3");
             c.Headers.Set("X-Requested-With", "XMLHttpRequest");
-            c.Headers.Set("Referer", URL);
+            c.Headers.Set("Referer", ModifiedURL);
 
             //c.Headers.Set("Connection", "keep-alive");
+            try
+            {
+                string json = c.DownloadString(ModifiedURL);
 
-            string json = c.DownloadString(ModifiedURL);
-
-            return json;
+                return json;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string DownloadJson(String URL)

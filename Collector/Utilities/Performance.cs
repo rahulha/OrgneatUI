@@ -15,13 +15,6 @@ namespace Collector.Utilities
 
         public Performance(Process P)
         {
-
-            //cpuCounter = new PerformanceCounter();
-            //cpuCounter.CategoryName = "Process";
-            //cpuCounter.CounterName = "% Processor Time";
-            //cpuCounter.InstanceName = this.LookForInstanceName(P);// "_Total";
-            //Application.ProductName
-
             cpuCounter = new PerformanceCounter("Process", "% Processor Time", P.ProcessName);
 
             ramCounter = new PerformanceCounter("Memory", "Available MBytes");
@@ -48,8 +41,6 @@ namespace Collector.Utilities
         {
 
             float cpu = (cpuCounter.NextValue() / Environment.ProcessorCount);
-
-            //= cpuCounter.NextValue();
 
             return cpu;
         }

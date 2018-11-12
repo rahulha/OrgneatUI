@@ -44,15 +44,6 @@ namespace Collector.Generics
             }
         }
 
-        //public string emojified_name
-        //{
-        //    get => EmojifiedNameJson;
-
-        //    set
-        //    {
-        //        EmojifiedNameJson = value;
-        //    }
-        //}
-
+     
     }
 }

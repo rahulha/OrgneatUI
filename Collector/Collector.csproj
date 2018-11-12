@@ -58,7 +58,9 @@
     <Compile Include="Generics\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\FileManager.cs" />
     <Compile Include="Utilities\HTMLParser.cs" />
+    <Compile Include="Utilities\LogHandler.cs" />
     <Compile Include="Utilities\Performance.cs" />
     <Compile Include="Utilities\Scraper.cs" />
     <Compile Include="Generics\TwitterResponseJson.cs" />

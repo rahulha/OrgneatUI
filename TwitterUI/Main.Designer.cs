@@ -132,9 +132,11 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button20 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.speed = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
@@ -1235,36 +1237,48 @@
             // 
             // button18
             // 
-            this.button18.Location = new System.Drawing.Point(1425, 787);
+            this.button18.Location = new System.Drawing.Point(1425, 773);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(115, 85);
+            this.button18.Size = new System.Drawing.Size(115, 99);
             this.button18.TabIndex = 14;
             this.button18.Text = "Start Process";
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 
-            this.button19.Location = new System.Drawing.Point(1546, 787);
+            this.button19.Location = new System.Drawing.Point(1546, 773);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(115, 85);
+            this.button19.Size = new System.Drawing.Size(115, 99);
             this.button19.TabIndex = 14;
             this.button19.Text = "End Process";
             this.button19.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.label19);
             this.groupBox7.Controls.Add(this.label26);
             this.groupBox7.Controls.Add(this.comboBox2);
             this.groupBox7.Controls.Add(this.button20);
+            this.groupBox7.Controls.Add(this.textBox1);
             this.groupBox7.Controls.Add(this.button17);
             this.groupBox7.Controls.Add(this.label18);
             this.groupBox7.Controls.Add(this.speed);
-            this.groupBox7.Location = new System.Drawing.Point(839, 787);
+            this.groupBox7.Location = new System.Drawing.Point(839, 773);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(580, 85);
+            this.groupBox7.Size = new System.Drawing.Size(580, 99);
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Config";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(324, 22);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(102, 17);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "Time threshold";
             // 
             // label26
             // 
@@ -1277,7 +1291,29 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
             this.comboBox2.Location = new System.Drawing.Point(445, 49);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
@@ -1287,10 +1323,18 @@
             // 
             this.button20.Location = new System.Drawing.Point(7, 22);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 57);
+            this.button20.Size = new System.Drawing.Size(75, 71);
             this.button20.TabIndex = 0;
             this.button20.Text = "Save Folder";
             this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(327, 51);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(99, 22);
+            this.textBox1.TabIndex = 43;
             // 
             // label18
             // 
@@ -1465,6 +1509,8 @@
         private System.Windows.Forms.Button btnFromAllUserRemove;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox speed;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

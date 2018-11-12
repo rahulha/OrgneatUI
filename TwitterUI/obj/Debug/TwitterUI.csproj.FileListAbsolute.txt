@@ -13,6 +13,7 @@ F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.csprojResol
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.frmTestQuery.resources
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.Main.resources
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.Properties.Resources.resources
+F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.ScraperWindow.resources
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.csproj.GenerateResource.cache
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.csproj.CoreCompileInputs.cache
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Debug\TwitterUI.csproj.CopyComplete

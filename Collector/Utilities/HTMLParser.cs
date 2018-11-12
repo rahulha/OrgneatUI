@@ -7,7 +7,7 @@ using HtmlAgilityPack;
 
 namespace Collector.Utilities
 {
-   public class HTMLParser : System.IDisposable
+    public class HTMLParser : System.IDisposable
     {
         private string hTMLString;
 
@@ -50,29 +50,43 @@ namespace Collector.Utilities
 
         public string getAttributeValue(String xPath, String AttributeName, int NodeIndex = 0)
         {
-            HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(xPath);
-
-            if (NodeIndex <= nodes.Count)
+            try
             {
-                if (nodes[NodeIndex].Attributes.Contains(AttributeName))
+                HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(xPath);
+
+                if (NodeIndex <= nodes.Count)
                 {
-                    return nodes[NodeIndex].Attributes[AttributeName].Value;
+                    if (nodes[NodeIndex].Attributes.Contains(AttributeName))
+                    {
+                        return nodes[NodeIndex].Attributes[AttributeName].Value;
+                    }
+                    else
+                        throw new Exception("Invalid Attribute to search");
                 }
                 else
-                    throw new Exception("Invalid Attribute to search");
+                    throw new Exception("Index out of range.");
             }
-            else
-                throw new Exception("Index out of range.");
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public string getNodeInnerText(String xPath, int NodeIndex = 0)
         {
-            HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(xPath);
+            try
+            {
+                HtmlNodeCollection nodes = doc.DocumentNode.SelectNodes(xPath);
 
-            if (NodeIndex <= nodes.Count)
-                return nodes[NodeIndex].InnerText;
-            else
-                throw new Exception("Index out of range.");
+                if (NodeIndex <= nodes.Count)
+                    return nodes[NodeIndex].InnerText;
+                else
+                    throw new Exception("Index out of range.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public HtmlNodeCollection getNodes(string xPath)
@@ -85,7 +99,6 @@ namespace Collector.Utilities
         {
             this.hTMLString = null;
             this.doc = null;
-
         }
     }
 }

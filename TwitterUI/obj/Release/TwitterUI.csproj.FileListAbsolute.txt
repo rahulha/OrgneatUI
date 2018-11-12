@@ -18,3 +18,4 @@ F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Release\TwitterUI.csproj.Co
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Release\TwitterUI.csproj.CopyComplete
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Release\TwitterUI.exe
 F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Release\TwitterUI.pdb
+F:\Project\TwitterHelper\TwitterHelper\TwitterUI\obj\Release\TwitterUI.ScraperWindow.resources

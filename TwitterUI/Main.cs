@@ -1,12 +1,7 @@
 ﻿using Collector.Generics;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TwitterUI
@@ -20,7 +15,8 @@ namespace TwitterUI
 
         public TwitterCreiteriaQuestion Query;
 
-      
+        private string SaveToFolder = "";
+
         private void TwitterUI_Load(object sender, EventArgs e)
         {
             Until.MaxDate = DateTime.Now;
@@ -274,6 +270,8 @@ namespace TwitterUI
             return itms.ToArray<String>();
         }
 
+
+        #region Buttons
         private void btnAllWordsAdd_Click(object sender, EventArgs e)
         {
             AddItem(ref AllWords, ref AllWordsAndPhrase);
@@ -439,6 +437,9 @@ namespace TwitterUI
             Since.MaxDate = Until.Value;
         }
 
+        #endregion
+
+
         private void button17_Click(object sender, EventArgs e)
         {
             PrepareQuery();
@@ -447,5 +448,34 @@ namespace TwitterUI
             f.ShowDialog();
         }
 
+        private void button18_Click(object sender, EventArgs e)
+        {
+            comboBox2.Text = String.IsNullOrEmpty(comboBox2.Text) ? "1" : comboBox2.Text;
+
+
+
+            if (Until.Value.Subtract(Since.Value).Days < Convert.ToInt32(comboBox2.Text))
+                MessageBox.Show("Number of threads cannot be more than number of days selected for your query");
+            if (String.IsNullOrEmpty(SaveToFolder))
+            {
+                MessageBox.Show("Please select a folder to save all files.");
+                button20.PerformClick();
+            }
+            else
+            {
+                PrepareQuery();
+                ScraperWindow f = new ScraperWindow(Convert.ToInt32(comboBox2.Text), this.Query, SaveToFolder);
+
+                f.ShowDialog();
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                SaveToFolder = folderBrowserDialog1.SelectedPath;
+            }
+        }
     }
 }

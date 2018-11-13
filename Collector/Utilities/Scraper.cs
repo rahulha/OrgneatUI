@@ -174,7 +174,7 @@ namespace Collector
 
         private FileManager fm;
 
-        private int WrongHashtems = 0;
+        private int WrongHasitems = 0;
 
         //private BackgroundWorker bw;
 
@@ -353,22 +353,22 @@ namespace Collector
 
                             if (!resp.has_more_items && tweets.Count > 0)
                             {
-                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHashtems < 5)
+                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
                                 {
                                     Run = true;
-                                    this.WrongHashtems += 1;
+                                    this.WrongHasitems += 1;
                                 }
-                                else if (this.WrongHashtems >= 5)
+                                else if (this.WrongHasitems >= 5 && tweets.Count > 0)
                                 {
-                                    this.myQuery.until = this.myQuery.until.AddDays(-1);
-                                    this.WrongHashtems = 0;
+                                    this.myQuery.until = tweets[tweets.Count - 1].Date.Date;
+                                    this.WrongHasitems = 0;
                                     Run = (this.myQuery.since < this.myQuery.until);
                                 }
                                 else
                                     Run = false;
                             }
                             else
-                                this.WrongHashtems = 0;
+                                this.WrongHasitems = 0;
                         }
                     }
                     catch (Exception ex)
@@ -381,7 +381,7 @@ namespace Collector
                 if (this.fm != null)
                     this.fm.Close();
 
-                this.WrongHashtems = 0;
+                this.WrongHasitems = 0;
 
                 var ScraperComplete = new ScraperCompletedEventArgs(null, false, null) { AssociatedQuery = this.myQuery, Number = this.MyNumber, isCanceled = this.Cancel };
 
@@ -474,7 +474,7 @@ namespace Collector
                         //Convert.ToDateTime( Convert.ToDecimal(getAttributeValue(div, "data-time-ms", "//span[contains(@class,'_timestamp')]")));
 
                         HtmlNode Tweet_Text = div.SelectSingleNode(".//p[contains(@class,'js-tweet-text')]");
-                        tweet.Text = Tweet_Text.InnerText.Replace("# ", "#").Replace("@ ", "@").Replace(",", ";");
+                        tweet.Text = Tweet_Text.InnerText.Replace("# ", "#").Replace("@ ", "@").Replace(",", ";").Replace("\n", "").Replace(Environment.NewLine, "");
                         tweet.Language = Tweet_Text.Attributes["lang"].Value;
 
                         HtmlNode footer = div.SelectSingleNode(".//div[contains(@class,'stream-item-footer')]");

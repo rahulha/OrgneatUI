@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Collector.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Collector.Generics
 
             set
             {
-                ID = value;
+                ID = TextManager.CleanTextForCSV(value);
             }
         }
 
@@ -30,7 +31,7 @@ namespace Collector.Generics
 
             set
             {
-                ScreenName = value;
+                ScreenName = TextManager.CleanTextForCSV(value);
             }
         }
 
@@ -40,7 +41,7 @@ namespace Collector.Generics
 
             set
             {
-                UserName = value;
+                UserName = TextManager.CleanTextForCSV(value);
             }
         }
 

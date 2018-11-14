@@ -1,70 +1,105 @@
 ﻿using System;
+using Collector.Utilities;
 
 namespace Collector.Generics
 {
     [Serializable]
     public class Tweet
     {
-        public string ID;
+        private string iD;
 
-        public string ConversationID;
+        private string conversationID;
 
-        public User Author=new User();
+        private User author = new User();
 
-        public DateTime Date;
+        private DateTime date;
 
-        public string Text;
+        private string text;
 
-        public string Language;
+        private string language;
 
-        public int Replies;
+        private int replies;
 
-        public int Retweets;
+        private int retweets;
 
-        public int Favorites;
+        private int favorites;
 
-        public string Mentions;
+        private string mentions;
 
-        public string Permalink;
+        private string permalink;
 
         //public string Hashtags;
 
         //public string URLs;
 
-        public bool isPartOfConversation;
+        private bool isPartOfConversation;
 
-        public bool isRootOFConversation;
+        private bool isRootOFConversation;
 
-        public bool isReply;
+        private bool isReply;
 
-        public bool isRetweet;
+        private bool isRetweet;
 
-        public User ReplyToUser =new User();
+        private User replyToUser = new User();
 
-        public string QuotedTweetID;
+        private string quotedTweetID;
 
-        public String QuotedTweetItemType;
+        private String quotedTweetItemType;
 
-        public string QuotedTweetConversationID;
-        public string QuotedTweetUser;
+        private string quotedTweetConversationID;
+        private string quotedTweetUser;
 
-        public string QuotedTweetUserID;
+        private string quotedTweetUserID;
 
-        public bool isVerified;
+        private bool isVerified;
 
-        public string Nonce;
+        private string nonce;
 
         //public bool StatInitialized;
 
-        public string itemID;
+        private string itemID;
 
-        public string DisclosureType;
+        private string disclosureType;
 
-        public bool HasCards;
+        private bool hasCards;
 
-        public string ComponentContext;
+        private string componentContext;
 
-        public bool HasParentTweet;
+        private bool hasParentTweet;
 
+
+
+
+        public string ID { get => iD; set => iD = TextManager.CleanTextForCSV(value); }
+        public string ConversationID { get => conversationID; set => conversationID = TextManager.CleanTextForCSV(value);  }
+        public string Mentions { get => mentions; set => mentions = TextManager.CleanTextForCSV(value);  }
+        public string Permalink { get => permalink; set => permalink = TextManager.CleanTextForCSV(value);  }
+        public string Text { get => text; set => text = TextManager.CleanTextForCSV(value);  }
+        public string Language { get => language; set => language = TextManager.CleanTextForCSV(value);  }
+        public string QuotedTweetID { get => quotedTweetID; set => quotedTweetID = TextManager.CleanTextForCSV(value);  }
+        public string QuotedTweetItemType { get => quotedTweetItemType; set => quotedTweetItemType = TextManager.CleanTextForCSV(value);  }
+        public string QuotedTweetConversationID { get => quotedTweetConversationID; set => quotedTweetConversationID = TextManager.CleanTextForCSV(value);  }
+        public string QuotedTweetUser { get => quotedTweetUser; set => quotedTweetUser = TextManager.CleanTextForCSV(value);  }
+        public string QuotedTweetUserID { get => quotedTweetUserID; set => quotedTweetUserID = TextManager.CleanTextForCSV(value);  }
+        public string Nonce { get => nonce; set => nonce = TextManager.CleanTextForCSV(value);  }
+        public string ItemID { get => itemID; set => itemID = TextManager.CleanTextForCSV(value);  }
+        public string DisclosureType { get => disclosureType; set => disclosureType = TextManager.CleanTextForCSV(value);  }
+        public string ComponentContext { get => componentContext; set => componentContext = TextManager.CleanTextForCSV(value);  }
+
+
+        public User Author { get => author; set => author = value; }
+        public User ReplyToUser { get => replyToUser; set => replyToUser = value; }
+
+        public DateTime Date { get => date; set => date = value; }
+        public int Replies { get => replies; set => replies = value; }
+        public int Retweets { get => retweets; set => retweets = value; }
+        public int Favorites { get => favorites; set => favorites = value; }
+        public bool IsPartOfConversation { get => isPartOfConversation; set => isPartOfConversation = value; }
+        public bool IsRootOFConversation { get => isRootOFConversation; set => isRootOFConversation = value; }
+        public bool IsReply { get => isReply; set => isReply = value; }
+        public bool IsRetweet { get => isRetweet; set => isRetweet = value; }
+        public bool IsVerified { get => isVerified; set => isVerified = value; }
+        public bool HasCards { get => hasCards; set => hasCards = value; }
+        public bool HasParentTweet { get => hasParentTweet; set => hasParentTweet = value; }
     }
 }

@@ -65,6 +65,7 @@
     <Compile Include="Utilities\Scraper.cs" />
     <Compile Include="Generics\TwitterResponseJson.cs" />
     <Compile Include="Utilities\Net.cs" />
+    <Compile Include="Utilities\TextManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

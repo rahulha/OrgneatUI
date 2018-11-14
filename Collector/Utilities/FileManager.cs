@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace Collector.Utilities
 {
@@ -11,7 +13,9 @@ namespace Collector.Utilities
         private String dir;
         private string fname;
         public String FullFilePath;
-        public FileStream fs;
+        //public FileStream fs;
+
+        private StreamWriter sw;
 
         private bool NewFile = false;
 
@@ -41,10 +45,10 @@ namespace Collector.Utilities
 
                 NewFile = !File.Exists(FullFilePath);
 
-                if (fs != null)
-                    fs.Dispose();
+                if (this.sw != null)
+                    this.sw.Dispose();
 
-                fs = new FileStream(FullFilePath, FileMode.Append);
+                sw = new StreamWriter(new FileStream(FullFilePath, FileMode.Append), Encoding.UTF8);
             }
         }
 
@@ -52,11 +56,11 @@ namespace Collector.Utilities
         {
             try
             {
-                byte[] b = Encoding.ASCII.GetBytes(Text);
+                //byte[] b = Encoding.ASCII.GetBytes(Text);
 
-                fs.Write(b, 0, b.Count());
-
-                fs.Flush();
+                //sw.Write( b, 0, b.Count());
+                sw.Write(Text);
+                sw.Flush();
             }
             catch (Exception ex)
             {
@@ -70,7 +74,8 @@ namespace Collector.Utilities
             {
                 byte[] b = Encoding.ASCII.GetBytes(Text);
 
-                fs.WriteAsync(b, 0, b.Count());
+                //fs.WriteAsync(b, 0, b.Count());
+                sw.WriteAsync(Text);
             }
             catch (Exception ex)
             {
@@ -87,11 +92,12 @@ namespace Collector.Utilities
                     if (!Text.EndsWith(Environment.NewLine))
                         Text += Environment.NewLine;
 
-                    byte[] b = Encoding.ASCII.GetBytes(Text);
+                    //byte[] b = Encoding.ASCII.GetBytes(Text);
 
-                    fs.Write(b, 0, b.Count());
+                    //fs.Write(b, 0, b.Count());
 
-                    fs.Flush();
+                    sw.Write(Text);
+                    sw.Flush();
                 }
                 catch (Exception ex)
                 {
@@ -100,17 +106,23 @@ namespace Collector.Utilities
             }
         }
 
-        public void Close()
+        public async void CloseAsync()
         {
-            try
+            await Task.Run(() =>
             {
-                fs.Flush();
-                fs.Close();
-            }
-            catch (Exception ex)
-            {
+                try
+                {
+                    //sw.Flush();
 
-            }
+                    sw.Close();
+                }
+                catch (Exception ex)
+                {
+                    Thread.Sleep(1000);
+                }
+            });
+
+
         }
 
         public void Dispose()
@@ -120,7 +132,7 @@ namespace Collector.Utilities
                 dir = null;
                 fname = null;
                 FullFilePath = null;
-                fs.Dispose();
+                sw.Dispose();
             }
             catch (Exception ex)
             {
@@ -132,13 +144,14 @@ namespace Collector.Utilities
         {
             try
             {
-                if (fs != null)
+                if (sw != null)
                 {
-                    fs.Close();
-                    fs.Dispose();
+                    sw.Close();
+                    sw.Dispose();
                 }
 
-                fs = new FileStream(FullFilePath, FileMode.Append);
+                //fs = new FileStream(FullFilePath, FileMode.Append);
+                sw = new StreamWriter(new FileStream(FullFilePath, FileMode.Append), Encoding.UTF8);
             }
             catch (Exception ex)
             {

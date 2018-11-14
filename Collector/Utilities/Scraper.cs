@@ -380,7 +380,7 @@ namespace Collector
                 }
 
                 if (this.fm != null)
-                    this.fm.Close();
+                    this.fm.CloseAsync();
 
                 this.WrongHasitems = 0;
 
@@ -428,14 +428,14 @@ namespace Collector
                         HtmlNode div = node.SelectSingleNode(".//div[contains(@class,'tweet')]");
 
                         tweet.ID = getAttributeValue(div, "data-tweet-id");
-                        tweet.itemID = getAttributeValue(div, "data-item-id");
+                        tweet.ItemID = getAttributeValue(div, "data-item-id");
                         tweet.Permalink = getAttributeValue(div, "data-permalink-path");
                         tweet.ConversationID = getAttributeValue(div, "data-conversation-id");
                         tweet.Nonce = getAttributeValue(div, "data-tweet-nonce");
 
                         //try
                         //{
-                        //    tweet.StatInitialized = Convert.ToBoolean(getAttributeValue(div, "data-tweet-stat-initialized"));
+                        //    tweet.StatInitialized = Convert.ToBoolean( getAttributeValue(div, "data-tweet-stat-initialized"));
                         //}
                         //catch (Exception ex)
                         //{
@@ -447,7 +447,7 @@ namespace Collector
                         tweet.Author.ScreenName = getAttributeValue(div, "data-screen-name");
                         tweet.Author.UserName = getAttributeValue(div, "data-name");
                         tweet.Author.ID = getAttributeValue(div, "data-user-id");
-                        tweet.isVerified = getNodeInnerText(div, ".//span[@class='UserBadges']//span[@class='u-hiddenVisually']").Contains(" Retweeted ");
+                        tweet.IsVerified = getNodeInnerText(div, ".//span[@class='UserBadges']//span[@class='u-hiddenVisually']").Contains(" Retweeted ");
 
                         //Reply to user
                         string replytoJson = getAttributeValue(div, "data-reply-to-users-json").Replace("&quot;", @"""");
@@ -463,8 +463,8 @@ namespace Collector
                         tweet.ComponentContext = getAttributeValue(div, "data-component-context");
 
                         temp = getAttributeValue(div, "data-is-reply-to");
-                        tweet.isReply = Convert.ToBoolean(string.IsNullOrEmpty(temp) ? "False" : temp);
-                        tweet.isRetweet = getNodeInnerText(div, ".//p[@class='u-hiddenVisually']").Contains(" Retweeted ");
+                        tweet.IsReply = Convert.ToBoolean(string.IsNullOrEmpty(temp) ? "False" : temp);
+                        tweet.IsRetweet = getNodeInnerText(div, ".//p[@class='u-hiddenVisually']").Contains(" Retweeted ");
 
                         temp = getAttributeValue(div, "data-has-parent-tweet");
                         tweet.HasParentTweet = Convert.ToBoolean(string.IsNullOrEmpty(temp) ? "False" : temp);
@@ -472,7 +472,7 @@ namespace Collector
 
                         tweet.Date = (new DateTime(1970, 1, 1)).AddMilliseconds(double.Parse(getAttributeValue(div, "data-time-ms", ".//span[contains(@class,'_timestamp')]")));
 
-                        //Convert.ToDateTime( Convert.ToDecimal(getAttributeValue(div, "data-time-ms", "//span[contains(@class,'_timestamp')]")));
+                        //Convert.ToDateTime( Convert.ToDecimal( getAttributeValue(div, "data-time-ms", "//span[contains(@class,'_timestamp')]")));
 
                         HtmlNode Tweet_Text = div.SelectSingleNode(".//p[contains(@class,'js-tweet-text')]");
                         tweet.Text = Tweet_Text.InnerText.Replace("# ", "#").Replace("@ ", "@").Replace(",", ";").Replace("\n", "").Replace(Environment.NewLine, "");
@@ -484,8 +484,8 @@ namespace Collector
                         tweet.Favorites = Convert.ToInt32(getAttributeValue(footer, "data-tweet-stat-count", ".//span[contains(@class,'ProfileTweet-action--favorite')]/span"));
 
 
-                        tweet.isPartOfConversation = !(tweet.ID == tweet.ConversationID);
-                        tweet.isRootOFConversation = (tweet.ID == tweet.ConversationID);
+                        tweet.IsPartOfConversation = !(tweet.ID == tweet.ConversationID);
+                        tweet.IsRootOFConversation = (tweet.ID == tweet.ConversationID);
 
 
 
@@ -521,6 +521,8 @@ namespace Collector
 
         private string getAttributeValue(HtmlNode doc, String AttributeName, String xPath = "", int NodeIndex = 0)
         {
+            String ret = "";
+
             if (doc != null)
             {
                 if (!String.IsNullOrEmpty(xPath))
@@ -530,43 +532,29 @@ namespace Collector
                         HtmlNode node = doc.SelectSingleNode(xPath);
 
                         if (node.Attributes.Contains(AttributeName))
-                            return node.Attributes[AttributeName].Value;
-
-                        else
-                            return "";
+                            ret = node.Attributes[AttributeName].Value;
                     }
                     else
                     {
                         HtmlNodeCollection nodes = doc.SelectNodes(xPath);
 
                         if (NodeIndex < nodes.Count)
-                        {
                             if (nodes[NodeIndex].Attributes.Contains(AttributeName))
-                                return nodes[NodeIndex].Attributes[AttributeName].Value;
-
-                            else
-                                return ""; //throw new Exception("Invalid Attribute to search");
-                        }
-                        else
-                            return ""; //throw new Exception("Index out of range.");
+                                ret = nodes[NodeIndex].Attributes[AttributeName].Value;
                     }
                 }
                 else
-                {
                     if (doc.Attributes.Contains(AttributeName))
-                        return doc.Attributes[AttributeName].Value;
-
-                    else
-                        return ""; //throw new Exception("Invalid Attribute to search");
-
-                }
+                    ret = doc.Attributes[AttributeName].Value;
             }
-            else
-                return "";
+
+            return ret;
         }
 
         private string getNodeInnerText(HtmlNode doc, String xPath, int NodeIndex = 0)
         {
+            String ret = "";
+
             if (doc != null)
             {
                 if (String.IsNullOrEmpty(xPath))
@@ -577,29 +565,27 @@ namespace Collector
                         HtmlNode node = doc.SelectSingleNode(xPath);
 
                         if (node != null)
-                            return node.InnerText;
+                            ret = node.InnerText;
 
-                        else
-                            return "";
                     }
                     else
                     {
                         HtmlNodeCollection nodes = doc.SelectNodes(xPath);
 
                         if (NodeIndex < nodes.Count)
-                            return nodes[NodeIndex].InnerText;
+                            ret = nodes[NodeIndex].InnerText;
 
-                        else
-                            return ""; //throw new Exception("Index out of range.");
                     }
                 }
                 else
-                    return doc.InnerText;
+                    ret = doc.InnerText;
 
             }
-            else
-                return "";
+
+            return ret;
         }
+
+
 
         private string GetTweetString(List<Tweet> tweets)
         {
@@ -613,10 +599,10 @@ namespace Collector
                     strTweets += String.Format("{0},{1},{2},{3},{4},{5},{6},{7},{8},{9},{10},{11},{12}, " +
                         "{13},{14},{15},{16},{17},{18},{19},{20},{21},{22},{23},{24},{25},{26}" + Environment.NewLine,
                         t.ID, t.ConversationID, t.ComponentContext, t.DisclosureType, t.HasParentTweet, t.HasCards,
-                        t.Date, t.Language, t.Permalink, t.isPartOfConversation,
-                        t.Author.ID, t.Author.name, t.isVerified,
+                        t.Date, t.Language, t.Permalink, t.IsPartOfConversation,
+                        t.Author.ID, t.Author.name, t.IsVerified,
                         t.Text, t.Replies, t.Retweets, t.Favorites, t.Mentions,
-                        t.isReply, t.isRetweet, t.ReplyToUser.ID, t.ReplyToUser.ScreenName, t.QuotedTweetID, t.QuotedTweetConversationID, t.QuotedTweetItemType,
+                        t.IsReply, t.IsRetweet, t.ReplyToUser.ID, t.ReplyToUser.ScreenName, t.QuotedTweetID, t.QuotedTweetConversationID, t.QuotedTweetItemType,
                         t.QuotedTweetUserID, t.QuotedTweetUser
                         );
 

@@ -50,7 +50,7 @@ namespace Collector.Utilities
             c.Headers.Set("X-Requested-With", "XMLHttpRequest");
             c.Headers.Set("content-type","application/json;charset=utf-8");
             c.Headers.Set("Referer", ModifiedURL);
-
+            
             try
             {
                 string json = c.DownloadString(ModifiedURL);

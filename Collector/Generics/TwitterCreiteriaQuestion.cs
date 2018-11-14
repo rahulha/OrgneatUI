@@ -2,7 +2,7 @@
 
 namespace Collector.Generics
 {
-    public class TwitterCreiteriaQuestion
+    public class TwitterCreiteriaQuestion : ICloneable
     {
         public String near = "", within = "", lang = "all";
         public String[] AllWordsAndPhrase = { }, SkipWordsAndPhrase = { }, AnyWordsAndPhrase = { }, AllHashtags = { }, AnyHashtags = { }, AllFrom = { }, AnyFrom = { }, AllTo = { }, AnyTo = { }, AllMention = { }, AnyMention = { };
@@ -12,6 +12,10 @@ namespace Collector.Generics
         public Boolean toptweets = true;
         public int maxtweets = 0;
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
         public override string ToString()
         {
@@ -184,23 +188,14 @@ namespace Collector.Generics
                 if (this.within != "0")
                     urlGetData += " within:" + this.within;
 
-            //DateTime untill = DateTime.Now;//.strftime("%Y-%m-%d")
-            //DateTime since = DateTime.Now.AddDays(-7);
-
-            //if (!String.IsNullOrEmpty(this.since))
-            //    urlGetData += " since:" + this.since;
-            //else
             urlGetData += " since:" + since.Year.ToString() + "-" + since.Month.ToString() + "-" + since.Day.ToString();
 
-            //if (!String.IsNullOrEmpty(until))
-            //    urlGetData += " until:" + this.until;
-            //else
             urlGetData += " until:" + until.Year.ToString() + "-" + until.Month.ToString() + "-" + until.Day.ToString();
 
             if (!String.IsNullOrEmpty(lang))
                 urlGetData += "&lang=" + this.lang;
 
-            return urlGetData;
+            return urlGetData.Trim();
         }
     }
 }

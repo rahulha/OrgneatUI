@@ -34,7 +34,7 @@ namespace Collector.Utilities
 
             Uri myUri = new Uri(ModifiedURL, UriKind.RelativeOrAbsolute);
 
-            ModifiedURL = myUri.ToString();
+            ModifiedURL = myUri.ToString().Replace(" ", "%20");
 
             return ModifiedURL;
         }
@@ -46,11 +46,11 @@ namespace Collector.Utilities
             c.Headers.Set("Host", "twitter.com");
             c.Headers.Set("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64)");
             c.Headers.Set("Accept", "application/json, text/javascript, */*; q=0.01");
-            c.Headers.Set("Accept-Language", "de,en-US;q=0.7,en;q=0.3");
+            c.Headers.Set("Accept-Language", "en-US;q=0.7,en;q=0.3");
             c.Headers.Set("X-Requested-With", "XMLHttpRequest");
+            c.Headers.Set("content-type","application/json;charset=utf-8");
             c.Headers.Set("Referer", ModifiedURL);
 
-            //c.Headers.Set("Connection", "keep-alive");
             try
             {
                 string json = c.DownloadString(ModifiedURL);

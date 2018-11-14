@@ -72,7 +72,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Tweets processed";
-            this.columnHeader2.Width = 185;
+            this.columnHeader2.Width = 140;
             // 
             // columnHeader3
             // 

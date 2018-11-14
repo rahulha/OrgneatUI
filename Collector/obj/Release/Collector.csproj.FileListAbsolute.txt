@@ -10,4 +10,3 @@ F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Release\Newtonsoft.Json.xml
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.csproj.CopyComplete
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.exe
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.pdb
-F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.csprojResolveAssemblyReference.cache

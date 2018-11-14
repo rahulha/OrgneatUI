@@ -304,6 +304,7 @@ namespace Collector
 
             await Task.Run(() =>
             {
+               
 
                 while (Run && !this.Cancel)
                 {
@@ -315,61 +316,61 @@ namespace Collector
 
                         List<Tweet> tweets = ProcessTweetCollection(resp.TweetHtmlcollection);
 
-
-                        if (this.canWriteToFile)
-                            this.fm.AppendTextToFileAsync(GetTweetString(tweets));
-
-                        if ((this.TotalTweetSinceStart % 1000) < 20)
+                        if (tweets.Count > 0)
                         {
-                            DateTime FirstTweet = tweets[tweets.Count - 1].Date;
-                            double ProcessingTime = DateTime.Now.Subtract(this.startDT).TotalSeconds; //Total time in sec from start
-                            double ProcessedTime = this.LastTweet.Subtract(FirstTweet).TotalSeconds; //Tweet time span in secs
+                            if (this.canWriteToFile)
+                                this.fm.AppendTextToFileAsync(GetTweetString(tweets));
 
-                            //UInt64 ProcessingSpeed = Convert.ToUInt64(this.TotalTweetSinceStart / ProcessingTime); //# of tweets per processing sec
-                            //UInt64 number_of_tweets_estimates = Convert.ToUInt64(this.TotalDaysInQuery * ((this.TotalTweetSinceStart / ProcessedTime) * 86400));
 
-                            long ETASecs = Convert.ToInt64(this.TotalDaysInQuery * 86400 * (ProcessingTime / ProcessedTime));
+                            if ((this.TotalTweetSinceStart % 1000) < 20)
+                            {
+                                DateTime FirstTweet = tweets[tweets.Count - 1].Date;
+                                double ProcessingTime = DateTime.Now.Subtract(this.startDT).TotalSeconds; //Total time in sec from start
+                                double ProcessedTime = this.LastTweet.Subtract(FirstTweet).TotalSeconds; //Tweet time span in secs
 
-                            this.estimatedCompletionTime = new TimeSpan(ETASecs * 10000000);
+                                long ETASecs = Convert.ToInt64(this.TotalDaysInQuery * 86400 * (ProcessingTime / ProcessedTime));
+
+                                this.estimatedCompletionTime = new TimeSpan(ETASecs * 10000000);
+                            }
+
+                            string min_pos = resp.min_position;
+
+                            if (min_pos.StartsWith("cm+"))
+                                min_pos = "TWEET-" + tweets[tweets.Count - 1].ID + "-" + tweets[0].ID;
+
+                            SearchURL = TwitterNetworkUtil.BuildSearchURL(min_pos);
+
+                            if (this.myQuery.maxtweets != 0 && this.myQuery.maxtweets <= this.totalTweetCount)
+                                Run = false;
+                            else
+                            {
+                                Run = resp.has_more_items;
+
+                                if (!resp.has_more_items)
+                                {
+                                    if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
+                                    {
+                                        Run = true;
+                                        this.WrongHasitems += 1;
+                                    }
+                                    else if (this.WrongHasitems >= 5 && tweets.Count > 0)
+                                    {
+                                        this.myQuery.until = tweets[tweets.Count - 1].Date.Date;
+                                        this.WrongHasitems = 0;
+                                        Run = (this.myQuery.since < this.myQuery.until);
+                                    }
+                                    else
+                                        Run = false;
+                                }
+                                else
+                                    this.WrongHasitems = 0;
+                            }
                         }
 
                         var TweetProcessedResult = new TweetProcessedEventArgs(null, false, null) { Result = tweets, AssociatedQuery = this.myQuery, Number = this.MyNumber };
 
                         TweetsProcessed.BeginInvoke(this, TweetProcessedResult, EndTweetProcessedEvent, null);
 
-
-                        string min_pos = resp.min_position;
-
-                        if (min_pos.StartsWith("cm+") && tweets.Count > 0)
-                            min_pos = "TWEET-" + tweets[tweets.Count - 1].ID + "-" + tweets[0].ID;
-
-                        SearchURL = TwitterNetworkUtil.BuildSearchURL(min_pos);
-
-                        if (this.myQuery.maxtweets != 0 && this.myQuery.maxtweets <= this.totalTweetCount)
-                            Run = false;
-                        else
-                        {
-                            Run = resp.has_more_items;
-
-                            if (!resp.has_more_items && tweets.Count > 0)
-                            {
-                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
-                                {
-                                    Run = true;
-                                    this.WrongHasitems += 1;
-                                }
-                                else if (this.WrongHasitems >= 5 && tweets.Count > 0)
-                                {
-                                    this.myQuery.until = tweets[tweets.Count - 1].Date.Date;
-                                    this.WrongHasitems = 0;
-                                    Run = (this.myQuery.since < this.myQuery.until);
-                                }
-                                else
-                                    Run = false;
-                            }
-                            else
-                                this.WrongHasitems = 0;
-                        }
                     }
                     catch (Exception ex)
                     {

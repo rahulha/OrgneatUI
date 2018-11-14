@@ -85,7 +85,7 @@ namespace TwitterUI
             double ThreadDays = Math.Floor(numberofdays / NumberOfThreads) * -1;
 
             int i;
-            TwitterCreiteriaQuestion tempQuery = MainQuery;
+            TwitterCreiteriaQuestion tempQuery = (TwitterCreiteriaQuestion)MainQuery.Clone();
 
             tempQuery.until = MainQuery.until;
             tempQuery.since = tempQuery.until.AddDays(ThreadDays);
@@ -96,9 +96,6 @@ namespace TwitterUI
                 tempQuery.until = tempQuery.since;
                 tempQuery.since = tempQuery.until.AddDays(ThreadDays);
             }
-
-            //tempQuery.until = tempQuery.since;
-            //tempQuery.since = tempQuery.until.AddDays(ThreadDays);
 
             if (tempQuery.since > MainQuery.since)
                 tempQuery.since = MainQuery.since;

@@ -304,7 +304,7 @@ namespace Collector
 
             await Task.Run(() =>
             {
-               
+
 
                 while (Run && !this.Cancel)
                 {
@@ -339,33 +339,33 @@ namespace Collector
                                 min_pos = "TWEET-" + tweets[tweets.Count - 1].ID + "-" + tweets[0].ID;
 
                             SearchURL = TwitterNetworkUtil.BuildSearchURL(min_pos);
-
-                            if (this.myQuery.maxtweets != 0 && this.myQuery.maxtweets <= this.totalTweetCount)
-                                Run = false;
-                            else
-                            {
-                                Run = resp.has_more_items;
-
-                                if (!resp.has_more_items)
-                                {
-                                    if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
-                                    {
-                                        Run = true;
-                                        this.WrongHasitems += 1;
-                                    }
-                                    else if (this.WrongHasitems >= 5 && tweets.Count > 0)
-                                    {
-                                        this.myQuery.until = tweets[tweets.Count - 1].Date.Date;
-                                        this.WrongHasitems = 0;
-                                        Run = (this.myQuery.since < this.myQuery.until);
-                                    }
-                                    else
-                                        Run = false;
-                                }
-                                else
-                                    this.WrongHasitems = 0;
-                            }
                         }
+
+                        if (this.myQuery.maxtweets != 0 && this.myQuery.maxtweets <= this.totalTweetCount)
+                            Run = false;
+                        else
+                        {
+                            Run = resp.has_more_items;
+
+                            if (!resp.has_more_items)
+                            {
+                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
+                                {
+                                    Run = true;
+                                    this.WrongHasitems += 1;
+                                }
+                                else if (this.WrongHasitems >= 5)
+                                {
+                                    this.myQuery.until = tweets.Count == 0 ? tweets[tweets.Count - 1].Date.Date : this.myQuery.until.AddDays(-1);
+                                    this.WrongHasitems = 0;
+                                    Run = (this.myQuery.since < this.myQuery.until);
+                                }
+
+                            }
+                            else
+                                this.WrongHasitems = 0;
+                        }
+
 
                         var TweetProcessedResult = new TweetProcessedEventArgs(null, false, null) { Result = tweets, AssociatedQuery = this.myQuery, Number = this.MyNumber };
 

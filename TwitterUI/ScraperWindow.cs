@@ -125,6 +125,9 @@ namespace TwitterUI
 
             UpdateListView(e.Number.ToString(), 1, s.TotalTweetSinceStart.ToString());
             UpdateListView(e.Number.ToString(), 2, s.EstimatedCompletionTime.Days.ToString() + "  days, " + s.EstimatedCompletionTime.Minutes.ToString() + " mins, " + s.EstimatedCompletionTime.Seconds.ToString() + " secs.");
+
+            if (e.Error != null)
+                Log("Scraper number " + e.Number + " Error: " + e.Error.Message);
         }
 
         private void button1_Click(object sender, EventArgs e)

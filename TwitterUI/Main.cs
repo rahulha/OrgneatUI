@@ -37,7 +37,7 @@ namespace TwitterUI
 
         private void RemoveItem(ref ListBox lb)
         {
-            lb.Items.Remove(lb.SelectedItems);
+            lb.Items.RemoveAt(lb.SelectedIndex);
         }
 
         private String GetLanguage(String Language)

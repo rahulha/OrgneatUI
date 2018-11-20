@@ -175,6 +175,7 @@ namespace Collector
         private FileManager fm;
 
         private int WrongHasitems = 0;
+        private int JsonDownloadIssue = 0;
 
         //private BackgroundWorker bw;
 
@@ -293,10 +294,13 @@ namespace Collector
         //private void Bw_DoWork(object sender, DoWorkEventArgs e)
         private async Task DoWork()
         {
+            Exception workerException = null;
+
             this.totalTweetCount = 0;
 
             Net TwitterNetworkUtil = new Net();
             TwitterNetworkUtil.Query = this.myQuery;
+            List<Tweet> tweets = null;
 
             String SearchURL = TwitterNetworkUtil.BuildSearchURL();
 
@@ -310,14 +314,24 @@ namespace Collector
                 {
                     try
                     {
+                        //Download json from Twitter
                         string json = TwitterNetworkUtil.DownloadJson(SearchURL);
 
+                        //Convert Json string to json object for processing
                         TwitterResponseJson resp = ProcessJson(json);
 
-                        List<Tweet> tweets = ProcessTweetCollection(resp.TweetHtmlcollection);
+                        //Process Tweets
+                        tweets = ProcessTweetCollection(resp.TweetHtmlcollection);
 
+                        //This counter checks if there is any issue in json download.
+                        JsonDownloadIssue += 1;
+
+                        //Saving tweets, stat calculations
                         if (tweets.Count > 0)
                         {
+                            //if there is no error in json download, reset counter.
+                            JsonDownloadIssue = 0;
+
                             if (this.canWriteToFile)
                                 this.fm.AppendTextToFileAsync(GetTweetString(tweets));
 
@@ -341,39 +355,61 @@ namespace Collector
                             SearchURL = TwitterNetworkUtil.BuildSearchURL(min_pos);
                         }
 
+                        //Determine whether to continue running loop.
+
+                        //If max tweets is set, check and stop loop
                         if (this.myQuery.maxtweets != 0 && this.myQuery.maxtweets <= this.totalTweetCount)
                             Run = false;
-                        else
-                        {
-                            Run = resp.has_more_items;
 
-                            if (!resp.has_more_items)
+                        else if (!resp.has_more_items)
+                        {
+                            if (tweets.Count > 0)
                             {
-                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5)
-                                {
-                                    Run = true;
+                                if (this.myQuery.since.Date < tweets[tweets.Count - 1].Date.Date && this.WrongHasitems < 5) //Since date not reached. Twitter by mistake responded with no more items flag. Try again for next batch with min_position in URL
                                     this.WrongHasitems += 1;
-                                }
-                                else if (this.WrongHasitems >= 5)
+
+                                else if (this.WrongHasitems >= 5) //Since date has not reached but retry 5 times failed. Now trying with until date less than last tweet received.
                                 {
-                                    this.myQuery.until = tweets.Count == 0 ? tweets[tweets.Count - 1].Date.Date : this.myQuery.until.AddDays(-1);
+                                    this.myQuery.until = tweets[tweets.Count - 1].Date.Date;
                                     this.WrongHasitems = 0;
                                     Run = (this.myQuery.since < this.myQuery.until);
                                 }
-
+                                else
+                                    Run = false; //Since date reached
                             }
                             else
-                                this.WrongHasitems = 0;
+                            {
+                                //Tweets not received and has items flas is false. Since date not reached but is less than until dte so trying again with same query.
+                                if (JsonDownloadIssue < 5 && this.myQuery.since.AddDays(1) < this.myQuery.until)
+                                    workerException = new Exception("Error downloading Json. Attempt " + JsonDownloadIssue);
+
+                                else if (JsonDownloadIssue >= 5)
+                                {
+                                    workerException = new Exception("There was an issue downloading Json. We tried downloading 5 times. Check the Twitter URL for to see if the Twitter response is null. URL: " + SearchURL);
+
+                                    this.myQuery.until = this.myQuery.until.AddDays(-1);
+                                    this.WrongHasitems = 0;
+                                    this.JsonDownloadIssue = 0;
+                                    Run = (this.myQuery.since < this.myQuery.until);
+                                }
+                                else
+                                    Run = false; //Since date and until date are now same as result of decrementing until date for any reason.
+
+                            }
                         }
-
-
-                        var TweetProcessedResult = new TweetProcessedEventArgs(null, false, null) { Result = tweets, AssociatedQuery = this.myQuery, Number = this.MyNumber };
-
-                        TweetsProcessed.BeginInvoke(this, TweetProcessedResult, EndTweetProcessedEvent, null);
+                        else
+                            this.WrongHasitems = 0;
 
                     }
                     catch (Exception ex)
                     {
+                        workerException = ex;
+                    }
+                    finally
+                    {
+                        var TweetProcessedResult = new TweetProcessedEventArgs(workerException, false, null) { Result = tweets, AssociatedQuery = this.myQuery, Number = this.MyNumber };
+
+                        TweetsProcessed.BeginInvoke(this, TweetProcessedResult, EndTweetProcessedEvent, null);
 
                     }
 

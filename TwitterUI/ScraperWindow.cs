@@ -41,9 +41,9 @@ namespace TwitterUI
             });
         }
 
-        private void AddWorker(TwitterCreiteriaQuestion tempQuery, int i)
+        private void AddWorker(TwitterCreiteriaQuestion tempQuery, int i) //ScrapeType function,
         {
-            Scraper scraper = new Scraper(tempQuery, true, MainDirectory, i);
+            Scraper scraper = new Scraper(tempQuery, true, MainDirectory, i);//function, 
 
             scraper.TweetsProcessed += Scraper_TweetsProcessed;
             scraper.ScraperCompleted += Scraper_ScraperCompleted;

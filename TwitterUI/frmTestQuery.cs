@@ -12,13 +12,14 @@ namespace TwitterUI
 {
     public partial class frmTestQuery : Form
     {
-        public TwitterCreiteriaQuestion TwitterQuery;
+        private TwitterCreiteriaQuestion TwitterQuery;
+        private ScrapeType f = ScrapeType.tweets;
         private int InternetSpeed = 100;
         private Performance perf;
 
         private Net TwitterNetworkUtil;
 
-        private string SampleURL = "https://twitter.com/search?f=tweets&q={0}&src=typd";
+        private string SampleURL = "https://twitter.com/search?f=tweets&q={1}&src=typd";
 
         List<Tweet> sampleTweets = new List<Tweet>();
 
@@ -26,7 +27,7 @@ namespace TwitterUI
 
 
 
-        public frmTestQuery(TwitterCreiteriaQuestion Query, int InternetSpeed)
+        public frmTestQuery(TwitterCreiteriaQuestion Query, int InternetSpeed)//ScrapeType function, 
         {
             InitializeComponent();
 
@@ -48,7 +49,7 @@ namespace TwitterUI
         {
             timer2.Stop();
 
-            scraper = new Scraper(TwitterQuery);
+            scraper = new Scraper(TwitterQuery);//, f
             scraper.TweetsProcessed += Scraper_TweetsProcessed;
             scraper.ScraperCompleted += Scraper_ScraperCompleted;
 
@@ -123,7 +124,7 @@ namespace TwitterUI
                 InvokeUI(() =>
                 {
                     lblPUtilization.Text = Math.Round(cpu).ToString() + "%";
-               
+
                     //Performance
                     lblFileSize.Text = Math.Round(size, 2).ToString() + " kb";
                     label4.Text = sampleTweets.Count.ToString() + " downloaded in: ";

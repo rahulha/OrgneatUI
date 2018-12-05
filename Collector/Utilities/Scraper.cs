@@ -111,6 +111,11 @@ namespace Collector
 
         public TimeSpan EstimatedCompletionTime { get => this.estimatedCompletionTime; }
 
+        public ScrapeType Function
+        {
+            get => this.f;
+            set => this.f = value;
+        }
 
 
         /// <summary>
@@ -121,9 +126,11 @@ namespace Collector
         /// <param name="DirectoryToStoreFiles">Directory path to store file. Required parameter when canWriteToFile is set</param>
         /// <param name="FileNameWithoutExtension">Name of file without Extension. Required parameter when canWriteToFile is set</param>
         /// <param name="myNumber"></param>
-        public Scraper(TwitterCreiteriaQuestion Query, bool canWriteToFile = false, String DirectoryToStoreFiles = "", int myNumber = 0)
+        public Scraper(TwitterCreiteriaQuestion Query, bool canWriteToFile = false, String DirectoryToStoreFiles = "", int myNumber = 0)//ScrapeType function, 
         {
             this.myQuery = Query ?? throw new ArgumentNullException(nameof(Query));
+
+            //this.f = function;
 
             this.canWriteToFile = canWriteToFile;
             if (this.canWriteToFile)
@@ -145,10 +152,6 @@ namespace Collector
 
             this.MyNumber = myNumber;
 
-            //this.bw = new BackgroundWorker();
-            //this.bw.DoWork += Bw_DoWork;
-            //this.bw.ProgressChanged += Bw_ProgressChanged;
-            //this.bw.RunWorkerCompleted += Bw_RunWorkerCompleted;
         }
 
 
@@ -188,6 +191,7 @@ namespace Collector
 
         private double TotalDaysInQuery = 0;
         private DateTime LastTweet;
+        private ScrapeType f = ScrapeType.tweets;
         #endregion
 
 
@@ -300,6 +304,7 @@ namespace Collector
 
             Net TwitterNetworkUtil = new Net();
             TwitterNetworkUtil.Query = this.myQuery;
+            TwitterNetworkUtil.function = this.f;
             List<Tweet> tweets = null;
 
             String SearchURL = TwitterNetworkUtil.BuildSearchURL();
@@ -352,7 +357,7 @@ namespace Collector
                             if (min_pos.StartsWith("cm+"))
                                 min_pos = "TWEET-" + tweets[tweets.Count - 1].ID + "-" + tweets[0].ID;
 
-                            SearchURL = TwitterNetworkUtil.BuildSearchURL(min_pos);
+                            SearchURL = TwitterNetworkUtil.BuildSearchURL(MaxPosition: min_pos);
                         }
 
                         //Determine whether to continue running loop.

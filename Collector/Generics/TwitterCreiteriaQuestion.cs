@@ -8,6 +8,7 @@ namespace Collector.Generics
         public String[] AllWordsAndPhrase = { }, SkipWordsAndPhrase = { }, AnyWordsAndPhrase = { }, AllHashtags = { }, AnyHashtags = { }, AllFrom = { }, AnyFrom = { }, AllTo = { }, AnyTo = { }, AllMention = { }, AnyMention = { };
         public String[] SkipFromUsers = { }, SkipToUsers = { }, SkipMentions = { };
         public DateTime since, until;
+        
 
         public Boolean toptweets = true;
         public int maxtweets = 0;
@@ -197,5 +198,16 @@ namespace Collector.Generics
 
             return urlGetData.Trim();
         }
+    }
+
+    public enum ScrapeType
+    {
+        top,
+        tweets,
+        users,
+        images,
+        videos,
+        news,
+        broadcasts
     }
 }

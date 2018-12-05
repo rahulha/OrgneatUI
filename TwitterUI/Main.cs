@@ -27,11 +27,14 @@ namespace TwitterUI
 
         private void AddItem(ref TextBox tb, ref ListBox lb)
         {
-            string cText = "";
+            if (!string.IsNullOrWhiteSpace(tb.Text))
+            {
+                string cText = tb.Text;
 
-            cText = (tb.Text.Contains(" ") ? @""" + tb.Text + @""" : tb.Text);
+                //cText = (tb.Text.Contains(" ") ? String.Concat("\"", tb.Text, "\"") : tb.Text);
 
-            lb.Items.Add(cText);
+                lb.Items.Add(cText);
+            }
             tb.Clear();
         }
 
@@ -446,7 +449,7 @@ namespace TwitterUI
             frmTestQuery f = new frmTestQuery(this.Query, Convert.ToInt32(speed.Text));
 
             f.ShowDialog();
-        }
+        }   
 
         private void button18_Click(object sender, EventArgs e)
         {

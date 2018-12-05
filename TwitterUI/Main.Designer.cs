@@ -140,6 +140,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.speed = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1041,6 +1046,11 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.radioButton5);
+            this.groupBox6.Controls.Add(this.radioButton4);
+            this.groupBox6.Controls.Add(this.radioButton3);
+            this.groupBox6.Controls.Add(this.radioButton2);
+            this.groupBox6.Controls.Add(this.radioButton1);
             this.groupBox6.Controls.Add(this.MaxTweets);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.Lang);
@@ -1062,16 +1072,16 @@
             // 
             // MaxTweets
             // 
-            this.MaxTweets.Location = new System.Drawing.Point(555, 137);
+            this.MaxTweets.Location = new System.Drawing.Point(442, 137);
             this.MaxTweets.Name = "MaxTweets";
-            this.MaxTweets.Size = new System.Drawing.Size(250, 22);
+            this.MaxTweets.Size = new System.Drawing.Size(178, 22);
             this.MaxTweets.TabIndex = 47;
             this.MaxTweets.Text = "0";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(429, 137);
+            this.label25.Location = new System.Drawing.Point(339, 137);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(82, 17);
             this.label25.TabIndex = 46;
@@ -1143,9 +1153,9 @@
             "Urdu (اردو)",
             "Uyghur (ئۇيغۇرچە)",
             "Vietnamese (Tiếng Việt)"});
-            this.Lang.Location = new System.Drawing.Point(141, 135);
+            this.Lang.Location = new System.Drawing.Point(118, 135);
             this.Lang.Name = "Lang";
-            this.Lang.Size = new System.Drawing.Size(250, 24);
+            this.Lang.Size = new System.Drawing.Size(178, 24);
             this.Lang.TabIndex = 45;
             // 
             // label24
@@ -1159,15 +1169,15 @@
             // 
             // Within
             // 
-            this.Within.Location = new System.Drawing.Point(555, 81);
+            this.Within.Location = new System.Drawing.Point(442, 81);
             this.Within.Name = "Within";
-            this.Within.Size = new System.Drawing.Size(250, 22);
+            this.Within.Size = new System.Drawing.Size(178, 22);
             this.Within.TabIndex = 43;
             // 
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(429, 81);
+            this.label23.Location = new System.Drawing.Point(339, 81);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(47, 17);
             this.label23.TabIndex = 42;
@@ -1175,24 +1185,24 @@
             // 
             // Near
             // 
-            this.Near.Location = new System.Drawing.Point(141, 84);
+            this.Near.Location = new System.Drawing.Point(118, 84);
             this.Near.Name = "Near";
-            this.Near.Size = new System.Drawing.Size(250, 22);
+            this.Near.Size = new System.Drawing.Size(178, 22);
             this.Near.TabIndex = 41;
             // 
             // Until
             // 
-            this.Until.Location = new System.Drawing.Point(555, 35);
+            this.Until.Location = new System.Drawing.Point(442, 35);
             this.Until.Name = "Until";
-            this.Until.Size = new System.Drawing.Size(250, 22);
+            this.Until.Size = new System.Drawing.Size(178, 22);
             this.Until.TabIndex = 15;
             this.Until.ValueChanged += new System.EventHandler(this.Until_ValueChanged);
             // 
             // Since
             // 
-            this.Since.Location = new System.Drawing.Point(141, 35);
+            this.Since.Location = new System.Drawing.Point(118, 35);
             this.Since.Name = "Since";
-            this.Since.Size = new System.Drawing.Size(250, 22);
+            this.Since.Size = new System.Drawing.Size(178, 22);
             this.Since.TabIndex = 14;
             this.Since.ValueChanged += new System.EventHandler(this.Since_ValueChanged);
             // 
@@ -1208,7 +1218,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(426, 35);
+            this.label21.Location = new System.Drawing.Point(336, 35);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(26, 17);
             this.label21.TabIndex = 11;
@@ -1354,6 +1364,61 @@
             this.speed.TabIndex = 32;
             this.speed.Text = "100";
             this.speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(675, 34);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(54, 21);
+            this.radioButton1.TabIndex = 48;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Top";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(675, 61);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(44, 21);
+            this.radioButton2.TabIndex = 48;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "All";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(675, 88);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(66, 21);
+            this.radioButton3.TabIndex = 48;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Users";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(675, 116);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(110, 21);
+            this.radioButton4.TabIndex = 48;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton1";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(675, 143);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(110, 21);
+            this.radioButton5.TabIndex = 48;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "radioButton1";
+            this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -1511,6 +1576,11 @@
         private System.Windows.Forms.TextBox speed;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

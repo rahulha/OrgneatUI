@@ -3,6 +3,8 @@ A simple .net based project, based on Twitter Scraping principal to download his
 
 # For basic instructions and Screen shots, for now please visist this page: http://www.orgneat.com/Request
 
+# Instructional video on Youtube: https://www.youtube.com/watch?v=4Okdao4pRAs
+
 # Highlight
 
 There are many Python and Java based programs on Github. My own program is inspired by great work others have done, especially GetOldTweet program by Jefferson Henrique. This program is just an attempt to make it easy way for users to download tweets without engagging into Python learning or setting up enviornment.

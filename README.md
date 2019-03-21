@@ -17,4 +17,6 @@ Based on my experience Python on my local computer takes lot of Memory and Proce
 
 If you feel this code is worth taking your attention, please try it once, feel free to contribute as well.
 
+Note: Apologies for not being update with this. I am in the process of dedicating a person soon to work on this and making it better for everyone. This will be a side project that I can invest my time as hobby. Thanks for resposne from everyone. Feel free to update/pull code as you wish.
+
 

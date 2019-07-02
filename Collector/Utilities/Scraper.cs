@@ -18,6 +18,16 @@ namespace Collector
         #region "Public Members"
 
         /// <summary>
+        /// Type of file to Store
+        /// <list type="bullet">
+        /// <item>Json=0</item>
+        /// <item>CSV=1</item>
+        /// </list>
+        /// </summary>
+        public FileType FileType { get; set; }
+
+
+        /// <summary>
         /// Occurs when Scraper.TweetsProcessed() is called.
         /// Returns: TweetProcessedEventArgs
         /// Result includes Tweets result set, Scraper Indentifier number and Query being processed.
@@ -48,7 +58,7 @@ namespace Collector
 
                     if (this.fm == null)
                     {
-                        this.fm = new FileManager();
+                        this.fm = new FileManager(this.FileType);
                         this.fm.Directory = this.dir;
                         this.fm.FileName = this.filename;
                         this.fm.WriteHeader(this.Header);
@@ -126,8 +136,10 @@ namespace Collector
         /// <param name="DirectoryToStoreFiles">Directory path to store file. Required parameter when canWriteToFile is set</param>
         /// <param name="FileNameWithoutExtension">Name of file without Extension. Required parameter when canWriteToFile is set</param>
         /// <param name="myNumber"></param>
-        public Scraper(TwitterCreiteriaQuestion Query, bool canWriteToFile = false, String DirectoryToStoreFiles = "", int myNumber = 0)//ScrapeType function, 
+        public Scraper(TwitterCreiteriaQuestion Query, bool canWriteToFile = false, String DirectoryToStoreFiles = "", int myNumber = 0, FileType ft = FileType.CSV)//ScrapeType function, 
         {
+            this.FileType = ft;
+
             this.myQuery = Query ?? throw new ArgumentNullException(nameof(Query));
 
             //this.f = function;
@@ -144,10 +156,12 @@ namespace Collector
                 this.dir = DirectoryToStoreFiles;
                 this.filename = FileNameWithoutExtension;
 
-                this.fm = new FileManager();
+                this.fm = new FileManager(this.FileType);
                 this.fm.Directory = this.dir;
                 this.fm.FileName = this.filename;
-                this.fm.WriteHeader(this.Header);
+
+                if (this.FileType == FileType.CSV)
+                    this.fm.WriteHeader(this.Header);
             }
 
             this.MyNumber = myNumber;
@@ -325,8 +339,10 @@ namespace Collector
                         //Convert Json string to json object for processing
                         TwitterResponseJson resp = ProcessJson(json);
 
+
                         //Process Tweets
                         tweets = ProcessTweetCollection(resp.TweetHtmlcollection);
+
 
                         //This counter checks if there is any issue in json download.
                         JsonDownloadIssue += 1;
@@ -338,7 +354,10 @@ namespace Collector
                             JsonDownloadIssue = 0;
 
                             if (this.canWriteToFile)
-                                this.fm.AppendTextToFileAsync(GetTweetString(tweets));
+                                if (this.FileType == FileType.CSV)
+                                    this.fm.AppendTextToFileAsync(GetTweetString(tweets));
+                                else if (this.FileType == FileType.Json)
+                                    this.fm.AppendTextToFileAsync(json);
 
 
                             if ((this.TotalTweetSinceStart % 1000) < 20)
@@ -404,6 +423,8 @@ namespace Collector
                         }
                         else
                             this.WrongHasitems = 0;
+
+
 
                     }
                     catch (Exception ex)
@@ -721,5 +742,11 @@ namespace Collector
         public int Number;
         public TwitterCreiteriaQuestion AssociatedQuery;
         public bool isCanceled;
+    }
+
+    public enum FileType
+    {
+        Json = 0,
+        CSV = 1
     }
 }

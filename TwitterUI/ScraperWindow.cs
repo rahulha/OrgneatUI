@@ -14,15 +14,16 @@ namespace TwitterUI
         public String MainDirectory = "";
 
         List<Scraper> workers;
+        private FileType ft;
 
-        public ScraperWindow(int NumberOfThreads, TwitterCreiteriaQuestion TwitterQuery, String SaveFolderParth)
+        public ScraperWindow(int NumberOfThreads, TwitterCreiteriaQuestion TwitterQuery, String SaveFolderParth, FileType ft)
         {
             InitializeComponent();
 
             this.NumberOfThreads = NumberOfThreads;
             this.MainQuery = TwitterQuery;
             this.MainDirectory = SaveFolderParth;
-
+            this.ft = ft;
             workers = new List<Scraper>();
         }
 
@@ -43,7 +44,7 @@ namespace TwitterUI
 
         private void AddWorker(TwitterCreiteriaQuestion tempQuery, int i) //ScrapeType function,
         {
-            Scraper scraper = new Scraper(tempQuery, true, MainDirectory, i);//function, 
+            Scraper scraper = new Scraper(tempQuery, true, MainDirectory, i, ft);//function, 
 
             scraper.TweetsProcessed += Scraper_TweetsProcessed;
             scraper.ScraperCompleted += Scraper_ScraperCompleted;

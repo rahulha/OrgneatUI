@@ -1,4 +1,5 @@
-﻿using Collector.Generics;
+﻿using Collector;
+using Collector.Generics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -449,7 +450,7 @@ namespace TwitterUI
             frmTestQuery f = new frmTestQuery(this.Query, Convert.ToInt32(speed.Text));
 
             f.ShowDialog();
-        }   
+        }
 
         private void button18_Click(object sender, EventArgs e)
         {
@@ -459,15 +460,22 @@ namespace TwitterUI
 
             if (Until.Value.Subtract(Since.Value).Days < Convert.ToInt32(comboBox2.Text))
                 MessageBox.Show("Number of threads cannot be more than number of days selected for your query");
-            if (String.IsNullOrEmpty(SaveToFolder))
+            else if (String.IsNullOrEmpty(SaveToFolder))
             {
                 MessageBox.Show("Please select a folder to save all files.");
                 button20.PerformClick();
             }
+            else if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select type of file you want to save. The list is above Save folder button.");
+            }
             else
             {
                 PrepareQuery();
-                ScraperWindow f = new ScraperWindow(Convert.ToInt32(comboBox2.Text), this.Query, SaveToFolder);
+
+                FileType ft = comboBox1.SelectedIndex == 0 ? FileType.Json : FileType.CSV;
+
+                ScraperWindow f = new ScraperWindow(Convert.ToInt32(comboBox2.Text), this.Query, SaveToFolder, ft);
 
                 f.ShowDialog();
             }

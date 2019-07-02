@@ -13,15 +13,17 @@ namespace Collector.Utilities
         private String dir;
         private string fname;
         public String FullFilePath;
+
+        public FileType FileType { get; set; } = FileType.CSV;
         //public FileStream fs;
 
         private StreamWriter sw;
 
         private bool NewFile = false;
 
-        public FileManager()
+        public FileManager(FileType filetype)
         {
-
+            this.FileType = filetype;
         }
 
         public string Directory
@@ -41,7 +43,7 @@ namespace Collector.Utilities
             {
                 fname = value;
 
-                FullFilePath = Path.Combine(dir, value + ".csv");
+                FullFilePath = Path.Combine(dir, value + "." + this.FileType.ToString());
 
                 NewFile = !File.Exists(FullFilePath);
 

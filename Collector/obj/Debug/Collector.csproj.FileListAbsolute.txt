@@ -22,3 +22,4 @@ C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Debug\Collector.cspr
 C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Debug\Collector.csproj.CopyComplete
 C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Debug\Collector.exe
 C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Debug\Collector.pdb
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Debug\Collector.csprojAssemblyReference.cache

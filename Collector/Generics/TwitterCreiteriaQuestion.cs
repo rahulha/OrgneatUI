@@ -194,7 +194,7 @@ namespace Collector.Generics
             urlGetData += " until:" + until.Year.ToString() + "-" + until.Month.ToString() + "-" + until.Day.ToString();
 
             if (!String.IsNullOrEmpty(lang))
-                urlGetData += "&lang=" + this.lang;
+                urlGetData += "&l=" + this.lang;
 
             return urlGetData.Trim();
         }

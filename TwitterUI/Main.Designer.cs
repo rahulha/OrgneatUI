@@ -137,6 +137,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -145,7 +146,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.speed = new System.Windows.Forms.TextBox();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -167,9 +167,9 @@
             this.groupBox1.Controls.Add(this.AllWords);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(8, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(616, 170);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -178,7 +178,7 @@
             // btnAllWPRemove
             // 
             this.btnAllWPRemove.Location = new System.Drawing.Point(218, 141);
-            this.btnAllWPRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllWPRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllWPRemove.Name = "btnAllWPRemove";
             this.btnAllWPRemove.Size = new System.Drawing.Size(44, 19);
             this.btnAllWPRemove.TabIndex = 16;
@@ -189,7 +189,7 @@
             // btnAllPhraseAdd
             // 
             this.btnAllPhraseAdd.Location = new System.Drawing.Point(171, 118);
-            this.btnAllPhraseAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllPhraseAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllPhraseAdd.Name = "btnAllPhraseAdd";
             this.btnAllPhraseAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAllPhraseAdd.TabIndex = 15;
@@ -200,7 +200,7 @@
             // btnAllWordsAdd
             // 
             this.btnAllWordsAdd.Location = new System.Drawing.Point(171, 58);
-            this.btnAllWordsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllWordsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllWordsAdd.Name = "btnAllWordsAdd";
             this.btnAllWordsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAllWordsAdd.TabIndex = 14;
@@ -221,7 +221,7 @@
             // AllPhrase
             // 
             this.AllPhrase.Location = new System.Drawing.Point(14, 119);
-            this.AllPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.AllPhrase.Name = "AllPhrase";
             this.AllPhrase.Size = new System.Drawing.Size(154, 20);
             this.AllPhrase.TabIndex = 12;
@@ -241,7 +241,7 @@
             this.AllWordsAndPhrase.FormattingEnabled = true;
             this.AllWordsAndPhrase.HorizontalScrollbar = true;
             this.AllWordsAndPhrase.Location = new System.Drawing.Point(218, 55);
-            this.AllWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.AllWordsAndPhrase.Name = "AllWordsAndPhrase";
             this.AllWordsAndPhrase.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.AllWordsAndPhrase.Size = new System.Drawing.Size(390, 82);
@@ -250,7 +250,7 @@
             // AllWords
             // 
             this.AllWords.Location = new System.Drawing.Point(11, 58);
-            this.AllWords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllWords.Margin = new System.Windows.Forms.Padding(2);
             this.AllWords.Name = "AllWords";
             this.AllWords.Size = new System.Drawing.Size(156, 20);
             this.AllWords.TabIndex = 9;
@@ -277,9 +277,9 @@
             this.groupBox2.Controls.Add(this.AnyWords);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Location = new System.Drawing.Point(8, 184);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(616, 170);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
@@ -288,7 +288,7 @@
             // btnAnyWPRemove
             // 
             this.btnAnyWPRemove.Location = new System.Drawing.Point(219, 141);
-            this.btnAnyWPRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyWPRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyWPRemove.Name = "btnAnyWPRemove";
             this.btnAnyWPRemove.Size = new System.Drawing.Size(44, 19);
             this.btnAnyWPRemove.TabIndex = 16;
@@ -299,7 +299,7 @@
             // btnAnyPhraseRemove
             // 
             this.btnAnyPhraseRemove.Location = new System.Drawing.Point(171, 118);
-            this.btnAnyPhraseRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyPhraseRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyPhraseRemove.Name = "btnAnyPhraseRemove";
             this.btnAnyPhraseRemove.Size = new System.Drawing.Size(43, 19);
             this.btnAnyPhraseRemove.TabIndex = 15;
@@ -310,7 +310,7 @@
             // btnAnyWordsAdd
             // 
             this.btnAnyWordsAdd.Location = new System.Drawing.Point(171, 58);
-            this.btnAnyWordsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyWordsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyWordsAdd.Name = "btnAnyWordsAdd";
             this.btnAnyWordsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAnyWordsAdd.TabIndex = 14;
@@ -331,7 +331,7 @@
             // AnyPhrase
             // 
             this.AnyPhrase.Location = new System.Drawing.Point(14, 119);
-            this.AnyPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnyPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.AnyPhrase.Name = "AnyPhrase";
             this.AnyPhrase.Size = new System.Drawing.Size(154, 20);
             this.AnyPhrase.TabIndex = 12;
@@ -351,7 +351,7 @@
             this.AnyWordsAndPhrase.FormattingEnabled = true;
             this.AnyWordsAndPhrase.HorizontalScrollbar = true;
             this.AnyWordsAndPhrase.Location = new System.Drawing.Point(218, 55);
-            this.AnyWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnyWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.AnyWordsAndPhrase.Name = "AnyWordsAndPhrase";
             this.AnyWordsAndPhrase.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.AnyWordsAndPhrase.Size = new System.Drawing.Size(390, 82);
@@ -360,7 +360,7 @@
             // AnyWords
             // 
             this.AnyWords.Location = new System.Drawing.Point(11, 58);
-            this.AnyWords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnyWords.Margin = new System.Windows.Forms.Padding(2);
             this.AnyWords.Name = "AnyWords";
             this.AnyWords.Size = new System.Drawing.Size(156, 20);
             this.AnyWords.TabIndex = 9;
@@ -388,9 +388,9 @@
             this.groupBox4.Controls.Add(this.AllHashtags);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Location = new System.Drawing.Point(9, 534);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(616, 175);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
@@ -399,7 +399,7 @@
             // btnAnyHTRemove
             // 
             this.btnAnyHTRemove.Location = new System.Drawing.Point(562, 58);
-            this.btnAnyHTRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyHTRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyHTRemove.Name = "btnAnyHTRemove";
             this.btnAnyHTRemove.Size = new System.Drawing.Size(44, 19);
             this.btnAnyHTRemove.TabIndex = 16;
@@ -410,7 +410,7 @@
             // btnAllHTRemove
             // 
             this.btnAllHTRemove.Location = new System.Drawing.Point(252, 58);
-            this.btnAllHTRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllHTRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllHTRemove.Name = "btnAllHTRemove";
             this.btnAllHTRemove.Size = new System.Drawing.Size(44, 19);
             this.btnAllHTRemove.TabIndex = 16;
@@ -421,7 +421,7 @@
             // btnAnyHTAdd
             // 
             this.btnAnyHTAdd.Location = new System.Drawing.Point(515, 58);
-            this.btnAnyHTAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyHTAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyHTAdd.Name = "btnAnyHTAdd";
             this.btnAnyHTAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAnyHTAdd.TabIndex = 18;
@@ -434,7 +434,7 @@
             this.lstAnyHashtags.FormattingEnabled = true;
             this.lstAnyHashtags.HorizontalScrollbar = true;
             this.lstAnyHashtags.Location = new System.Drawing.Point(322, 82);
-            this.lstAnyHashtags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstAnyHashtags.Margin = new System.Windows.Forms.Padding(2);
             this.lstAnyHashtags.Name = "lstAnyHashtags";
             this.lstAnyHashtags.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstAnyHashtags.Size = new System.Drawing.Size(285, 82);
@@ -443,7 +443,7 @@
             // AnyHashtags
             // 
             this.AnyHashtags.Location = new System.Drawing.Point(322, 58);
-            this.AnyHashtags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnyHashtags.Margin = new System.Windows.Forms.Padding(2);
             this.AnyHashtags.Name = "AnyHashtags";
             this.AnyHashtags.Size = new System.Drawing.Size(189, 20);
             this.AnyHashtags.TabIndex = 16;
@@ -461,7 +461,7 @@
             // btnAllHTAdd
             // 
             this.btnAllHTAdd.Location = new System.Drawing.Point(205, 58);
-            this.btnAllHTAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllHTAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllHTAdd.Name = "btnAllHTAdd";
             this.btnAllHTAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAllHTAdd.TabIndex = 14;
@@ -474,7 +474,7 @@
             this.lstAllHashtags.FormattingEnabled = true;
             this.lstAllHashtags.HorizontalScrollbar = true;
             this.lstAllHashtags.Location = new System.Drawing.Point(11, 82);
-            this.lstAllHashtags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstAllHashtags.Margin = new System.Windows.Forms.Padding(2);
             this.lstAllHashtags.Name = "lstAllHashtags";
             this.lstAllHashtags.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstAllHashtags.Size = new System.Drawing.Size(285, 82);
@@ -483,7 +483,7 @@
             // AllHashtags
             // 
             this.AllHashtags.Location = new System.Drawing.Point(11, 58);
-            this.AllHashtags.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllHashtags.Margin = new System.Windows.Forms.Padding(2);
             this.AllHashtags.Name = "AllHashtags";
             this.AllHashtags.Size = new System.Drawing.Size(190, 20);
             this.AllHashtags.TabIndex = 9;
@@ -510,9 +510,9 @@
             this.groupBox3.Controls.Add(this.SkipWords);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Location = new System.Drawing.Point(9, 359);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(616, 170);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
@@ -521,7 +521,7 @@
             // btnSkipWPRemove
             // 
             this.btnSkipWPRemove.Location = new System.Drawing.Point(218, 141);
-            this.btnSkipWPRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipWPRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipWPRemove.Name = "btnSkipWPRemove";
             this.btnSkipWPRemove.Size = new System.Drawing.Size(44, 19);
             this.btnSkipWPRemove.TabIndex = 16;
@@ -532,7 +532,7 @@
             // btnSkipPhraseAdd
             // 
             this.btnSkipPhraseAdd.Location = new System.Drawing.Point(171, 118);
-            this.btnSkipPhraseAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipPhraseAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipPhraseAdd.Name = "btnSkipPhraseAdd";
             this.btnSkipPhraseAdd.Size = new System.Drawing.Size(43, 19);
             this.btnSkipPhraseAdd.TabIndex = 15;
@@ -543,7 +543,7 @@
             // btnSkipWordsAdd
             // 
             this.btnSkipWordsAdd.Location = new System.Drawing.Point(171, 58);
-            this.btnSkipWordsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipWordsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipWordsAdd.Name = "btnSkipWordsAdd";
             this.btnSkipWordsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnSkipWordsAdd.TabIndex = 14;
@@ -564,7 +564,7 @@
             // SkipPhrase
             // 
             this.SkipPhrase.Location = new System.Drawing.Point(14, 119);
-            this.SkipPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.SkipPhrase.Name = "SkipPhrase";
             this.SkipPhrase.Size = new System.Drawing.Size(154, 20);
             this.SkipPhrase.TabIndex = 12;
@@ -584,7 +584,7 @@
             this.SkipWordsAndPhrase.FormattingEnabled = true;
             this.SkipWordsAndPhrase.HorizontalScrollbar = true;
             this.SkipWordsAndPhrase.Location = new System.Drawing.Point(218, 55);
-            this.SkipWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipWordsAndPhrase.Margin = new System.Windows.Forms.Padding(2);
             this.SkipWordsAndPhrase.Name = "SkipWordsAndPhrase";
             this.SkipWordsAndPhrase.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.SkipWordsAndPhrase.Size = new System.Drawing.Size(390, 82);
@@ -593,7 +593,7 @@
             // SkipWords
             // 
             this.SkipWords.Location = new System.Drawing.Point(11, 58);
-            this.SkipWords.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipWords.Margin = new System.Windows.Forms.Padding(2);
             this.SkipWords.Name = "SkipWords";
             this.SkipWords.Size = new System.Drawing.Size(156, 20);
             this.SkipWords.TabIndex = 9;
@@ -656,9 +656,9 @@
             this.groupBox5.Controls.Add(this.FromAllUsers);
             this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Location = new System.Drawing.Point(629, 10);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(616, 466);
             this.groupBox5.TabIndex = 12;
             this.groupBox5.TabStop = false;
@@ -667,7 +667,7 @@
             // btnSkipMentionsRemove
             // 
             this.btnSkipMentionsRemove.Location = new System.Drawing.Point(556, 349);
-            this.btnSkipMentionsRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipMentionsRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipMentionsRemove.Name = "btnSkipMentionsRemove";
             this.btnSkipMentionsRemove.Size = new System.Drawing.Size(43, 19);
             this.btnSkipMentionsRemove.TabIndex = 38;
@@ -678,7 +678,7 @@
             // btnSkipMentionsAdd
             // 
             this.btnSkipMentionsAdd.Location = new System.Drawing.Point(509, 349);
-            this.btnSkipMentionsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipMentionsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipMentionsAdd.Name = "btnSkipMentionsAdd";
             this.btnSkipMentionsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnSkipMentionsAdd.TabIndex = 38;
@@ -689,7 +689,7 @@
             // btnAnyMentionsRemove
             // 
             this.btnAnyMentionsRemove.Location = new System.Drawing.Point(358, 349);
-            this.btnAnyMentionsRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyMentionsRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyMentionsRemove.Name = "btnAnyMentionsRemove";
             this.btnAnyMentionsRemove.Size = new System.Drawing.Size(43, 19);
             this.btnAnyMentionsRemove.TabIndex = 38;
@@ -700,7 +700,7 @@
             // btnAnyMentionsAdd
             // 
             this.btnAnyMentionsAdd.Location = new System.Drawing.Point(311, 349);
-            this.btnAnyMentionsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnyMentionsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAnyMentionsAdd.Name = "btnAnyMentionsAdd";
             this.btnAnyMentionsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAnyMentionsAdd.TabIndex = 38;
@@ -711,7 +711,7 @@
             // SkipMentions
             // 
             this.SkipMentions.Location = new System.Drawing.Point(414, 349);
-            this.SkipMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipMentions.Margin = new System.Windows.Forms.Padding(2);
             this.SkipMentions.Name = "SkipMentions";
             this.SkipMentions.Size = new System.Drawing.Size(94, 20);
             this.SkipMentions.TabIndex = 37;
@@ -719,7 +719,7 @@
             // AnyMentions
             // 
             this.AnyMentions.Location = new System.Drawing.Point(216, 349);
-            this.AnyMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AnyMentions.Margin = new System.Windows.Forms.Padding(2);
             this.AnyMentions.Name = "AnyMentions";
             this.AnyMentions.Size = new System.Drawing.Size(94, 20);
             this.AnyMentions.TabIndex = 37;
@@ -749,7 +749,7 @@
             this.lstSkipMentions.FormattingEnabled = true;
             this.lstSkipMentions.HorizontalScrollbar = true;
             this.lstSkipMentions.Location = new System.Drawing.Point(414, 373);
-            this.lstSkipMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstSkipMentions.Margin = new System.Windows.Forms.Padding(2);
             this.lstSkipMentions.Name = "lstSkipMentions";
             this.lstSkipMentions.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstSkipMentions.Size = new System.Drawing.Size(190, 82);
@@ -760,7 +760,7 @@
             this.lstAnyMentions.FormattingEnabled = true;
             this.lstAnyMentions.HorizontalScrollbar = true;
             this.lstAnyMentions.Location = new System.Drawing.Point(216, 373);
-            this.lstAnyMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstAnyMentions.Margin = new System.Windows.Forms.Padding(2);
             this.lstAnyMentions.Name = "lstAnyMentions";
             this.lstAnyMentions.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstAnyMentions.Size = new System.Drawing.Size(190, 82);
@@ -769,7 +769,7 @@
             // btnAllMentionsRemove
             // 
             this.btnAllMentionsRemove.Location = new System.Drawing.Point(156, 348);
-            this.btnAllMentionsRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllMentionsRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllMentionsRemove.Name = "btnAllMentionsRemove";
             this.btnAllMentionsRemove.Size = new System.Drawing.Size(43, 19);
             this.btnAllMentionsRemove.TabIndex = 34;
@@ -780,7 +780,7 @@
             // btnAllMentionsAdd
             // 
             this.btnAllMentionsAdd.Location = new System.Drawing.Point(109, 348);
-            this.btnAllMentionsAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAllMentionsAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAllMentionsAdd.Name = "btnAllMentionsAdd";
             this.btnAllMentionsAdd.Size = new System.Drawing.Size(43, 19);
             this.btnAllMentionsAdd.TabIndex = 34;
@@ -793,7 +793,7 @@
             this.lstAllMentions.FormattingEnabled = true;
             this.lstAllMentions.HorizontalScrollbar = true;
             this.lstAllMentions.Location = new System.Drawing.Point(11, 373);
-            this.lstAllMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstAllMentions.Margin = new System.Windows.Forms.Padding(2);
             this.lstAllMentions.Name = "lstAllMentions";
             this.lstAllMentions.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstAllMentions.Size = new System.Drawing.Size(194, 82);
@@ -802,7 +802,7 @@
             // AllMentions
             // 
             this.AllMentions.Location = new System.Drawing.Point(11, 349);
-            this.AllMentions.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AllMentions.Margin = new System.Windows.Forms.Padding(2);
             this.AllMentions.Name = "AllMentions";
             this.AllMentions.Size = new System.Drawing.Size(94, 20);
             this.AllMentions.TabIndex = 32;
@@ -820,7 +820,7 @@
             // btnSkipToUserRemove
             // 
             this.btnSkipToUserRemove.Location = new System.Drawing.Point(556, 202);
-            this.btnSkipToUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipToUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipToUserRemove.Name = "btnSkipToUserRemove";
             this.btnSkipToUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnSkipToUserRemove.TabIndex = 30;
@@ -831,7 +831,7 @@
             // btnSkipToUserAdd
             // 
             this.btnSkipToUserAdd.Location = new System.Drawing.Point(509, 202);
-            this.btnSkipToUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipToUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipToUserAdd.Name = "btnSkipToUserAdd";
             this.btnSkipToUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnSkipToUserAdd.TabIndex = 30;
@@ -842,7 +842,7 @@
             // btnToAnyUserRemove
             // 
             this.btnToAnyUserRemove.Location = new System.Drawing.Point(358, 202);
-            this.btnToAnyUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToAnyUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnToAnyUserRemove.Name = "btnToAnyUserRemove";
             this.btnToAnyUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnToAnyUserRemove.TabIndex = 30;
@@ -853,7 +853,7 @@
             // btnToAnyUserAdd
             // 
             this.btnToAnyUserAdd.Location = new System.Drawing.Point(311, 202);
-            this.btnToAnyUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToAnyUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnToAnyUserAdd.Name = "btnToAnyUserAdd";
             this.btnToAnyUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnToAnyUserAdd.TabIndex = 30;
@@ -864,7 +864,7 @@
             // SkipToUsers
             // 
             this.SkipToUsers.Location = new System.Drawing.Point(414, 203);
-            this.SkipToUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipToUsers.Margin = new System.Windows.Forms.Padding(2);
             this.SkipToUsers.Name = "SkipToUsers";
             this.SkipToUsers.Size = new System.Drawing.Size(94, 20);
             this.SkipToUsers.TabIndex = 29;
@@ -872,7 +872,7 @@
             // ToAnyUsers
             // 
             this.ToAnyUsers.Location = new System.Drawing.Point(216, 203);
-            this.ToAnyUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ToAnyUsers.Margin = new System.Windows.Forms.Padding(2);
             this.ToAnyUsers.Name = "ToAnyUsers";
             this.ToAnyUsers.Size = new System.Drawing.Size(94, 20);
             this.ToAnyUsers.TabIndex = 29;
@@ -902,7 +902,7 @@
             this.lstSkipToUsers.FormattingEnabled = true;
             this.lstSkipToUsers.HorizontalScrollbar = true;
             this.lstSkipToUsers.Location = new System.Drawing.Point(414, 226);
-            this.lstSkipToUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstSkipToUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstSkipToUsers.Name = "lstSkipToUsers";
             this.lstSkipToUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstSkipToUsers.Size = new System.Drawing.Size(190, 82);
@@ -913,7 +913,7 @@
             this.lstToAnyUsers.FormattingEnabled = true;
             this.lstToAnyUsers.HorizontalScrollbar = true;
             this.lstToAnyUsers.Location = new System.Drawing.Point(216, 227);
-            this.lstToAnyUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstToAnyUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstToAnyUsers.Name = "lstToAnyUsers";
             this.lstToAnyUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstToAnyUsers.Size = new System.Drawing.Size(190, 82);
@@ -922,7 +922,7 @@
             // btnToAllUserRemove
             // 
             this.btnToAllUserRemove.Location = new System.Drawing.Point(156, 202);
-            this.btnToAllUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToAllUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnToAllUserRemove.Name = "btnToAllUserRemove";
             this.btnToAllUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnToAllUserRemove.TabIndex = 26;
@@ -933,7 +933,7 @@
             // btnToAllUserAdd
             // 
             this.btnToAllUserAdd.Location = new System.Drawing.Point(109, 202);
-            this.btnToAllUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnToAllUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnToAllUserAdd.Name = "btnToAllUserAdd";
             this.btnToAllUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnToAllUserAdd.TabIndex = 26;
@@ -946,7 +946,7 @@
             this.lstToAllUSers.FormattingEnabled = true;
             this.lstToAllUSers.HorizontalScrollbar = true;
             this.lstToAllUSers.Location = new System.Drawing.Point(11, 227);
-            this.lstToAllUSers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstToAllUSers.Margin = new System.Windows.Forms.Padding(2);
             this.lstToAllUSers.Name = "lstToAllUSers";
             this.lstToAllUSers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstToAllUSers.Size = new System.Drawing.Size(194, 82);
@@ -955,7 +955,7 @@
             // ToAllUsers
             // 
             this.ToAllUsers.Location = new System.Drawing.Point(11, 203);
-            this.ToAllUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ToAllUsers.Margin = new System.Windows.Forms.Padding(2);
             this.ToAllUsers.Name = "ToAllUsers";
             this.ToAllUsers.Size = new System.Drawing.Size(94, 20);
             this.ToAllUsers.TabIndex = 24;
@@ -973,7 +973,7 @@
             // btnSkipFromUserRemove
             // 
             this.btnSkipFromUserRemove.Location = new System.Drawing.Point(556, 57);
-            this.btnSkipFromUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipFromUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipFromUserRemove.Name = "btnSkipFromUserRemove";
             this.btnSkipFromUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnSkipFromUserRemove.TabIndex = 22;
@@ -984,7 +984,7 @@
             // btnSkipFromUserAdd
             // 
             this.btnSkipFromUserAdd.Location = new System.Drawing.Point(509, 57);
-            this.btnSkipFromUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSkipFromUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnSkipFromUserAdd.Name = "btnSkipFromUserAdd";
             this.btnSkipFromUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnSkipFromUserAdd.TabIndex = 22;
@@ -995,7 +995,7 @@
             // btnFromAnyUserRemove
             // 
             this.btnFromAnyUserRemove.Location = new System.Drawing.Point(358, 57);
-            this.btnFromAnyUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFromAnyUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnFromAnyUserRemove.Name = "btnFromAnyUserRemove";
             this.btnFromAnyUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnFromAnyUserRemove.TabIndex = 22;
@@ -1006,7 +1006,7 @@
             // btnFromAnyUserAdd
             // 
             this.btnFromAnyUserAdd.Location = new System.Drawing.Point(311, 57);
-            this.btnFromAnyUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFromAnyUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnFromAnyUserAdd.Name = "btnFromAnyUserAdd";
             this.btnFromAnyUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnFromAnyUserAdd.TabIndex = 22;
@@ -1017,7 +1017,7 @@
             // SkipFromUsers
             // 
             this.SkipFromUsers.Location = new System.Drawing.Point(414, 58);
-            this.SkipFromUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SkipFromUsers.Margin = new System.Windows.Forms.Padding(2);
             this.SkipFromUsers.Name = "SkipFromUsers";
             this.SkipFromUsers.Size = new System.Drawing.Size(94, 20);
             this.SkipFromUsers.TabIndex = 21;
@@ -1025,7 +1025,7 @@
             // FromAnyUsers
             // 
             this.FromAnyUsers.Location = new System.Drawing.Point(216, 58);
-            this.FromAnyUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FromAnyUsers.Margin = new System.Windows.Forms.Padding(2);
             this.FromAnyUsers.Name = "FromAnyUsers";
             this.FromAnyUsers.Size = new System.Drawing.Size(94, 20);
             this.FromAnyUsers.TabIndex = 21;
@@ -1045,7 +1045,7 @@
             this.lstSkipFromUsers.FormattingEnabled = true;
             this.lstSkipFromUsers.HorizontalScrollbar = true;
             this.lstSkipFromUsers.Location = new System.Drawing.Point(414, 81);
-            this.lstSkipFromUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstSkipFromUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstSkipFromUsers.Name = "lstSkipFromUsers";
             this.lstSkipFromUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstSkipFromUsers.Size = new System.Drawing.Size(192, 82);
@@ -1066,7 +1066,7 @@
             this.lstFromAnyUsers.FormattingEnabled = true;
             this.lstFromAnyUsers.HorizontalScrollbar = true;
             this.lstFromAnyUsers.Location = new System.Drawing.Point(216, 81);
-            this.lstFromAnyUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstFromAnyUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstFromAnyUsers.Name = "lstFromAnyUsers";
             this.lstFromAnyUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstFromAnyUsers.Size = new System.Drawing.Size(192, 82);
@@ -1075,7 +1075,7 @@
             // btnFromAllUserRemove
             // 
             this.btnFromAllUserRemove.Location = new System.Drawing.Point(156, 56);
-            this.btnFromAllUserRemove.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFromAllUserRemove.Margin = new System.Windows.Forms.Padding(2);
             this.btnFromAllUserRemove.Name = "btnFromAllUserRemove";
             this.btnFromAllUserRemove.Size = new System.Drawing.Size(43, 19);
             this.btnFromAllUserRemove.TabIndex = 14;
@@ -1086,7 +1086,7 @@
             // btnFromAllUserAdd
             // 
             this.btnFromAllUserAdd.Location = new System.Drawing.Point(109, 56);
-            this.btnFromAllUserAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFromAllUserAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnFromAllUserAdd.Name = "btnFromAllUserAdd";
             this.btnFromAllUserAdd.Size = new System.Drawing.Size(43, 19);
             this.btnFromAllUserAdd.TabIndex = 14;
@@ -1099,7 +1099,7 @@
             this.lstFromAllUsers.FormattingEnabled = true;
             this.lstFromAllUsers.HorizontalScrollbar = true;
             this.lstFromAllUsers.Location = new System.Drawing.Point(11, 80);
-            this.lstFromAllUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstFromAllUsers.Margin = new System.Windows.Forms.Padding(2);
             this.lstFromAllUsers.Name = "lstFromAllUsers";
             this.lstFromAllUsers.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.lstFromAllUsers.Size = new System.Drawing.Size(194, 82);
@@ -1108,7 +1108,7 @@
             // FromAllUsers
             // 
             this.FromAllUsers.Location = new System.Drawing.Point(11, 57);
-            this.FromAllUsers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FromAllUsers.Margin = new System.Windows.Forms.Padding(2);
             this.FromAllUsers.Name = "FromAllUsers";
             this.FromAllUsers.Size = new System.Drawing.Size(94, 20);
             this.FromAllUsers.TabIndex = 9;
@@ -1143,9 +1143,9 @@
             this.groupBox6.Controls.Add(this.label21);
             this.groupBox6.Controls.Add(this.label22);
             this.groupBox6.Location = new System.Drawing.Point(628, 480);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(616, 145);
             this.groupBox6.TabIndex = 13;
             this.groupBox6.TabStop = false;
@@ -1155,7 +1155,7 @@
             // 
             this.radioButton5.AutoSize = true;
             this.radioButton5.Location = new System.Drawing.Point(506, 116);
-            this.radioButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton5.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(85, 17);
             this.radioButton5.TabIndex = 48;
@@ -1167,7 +1167,7 @@
             // 
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(506, 94);
-            this.radioButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton4.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(85, 17);
             this.radioButton4.TabIndex = 48;
@@ -1179,7 +1179,7 @@
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(506, 72);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(52, 17);
             this.radioButton3.TabIndex = 48;
@@ -1191,7 +1191,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(506, 50);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(36, 17);
             this.radioButton2.TabIndex = 48;
@@ -1203,7 +1203,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(506, 28);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(44, 17);
             this.radioButton1.TabIndex = 48;
@@ -1214,7 +1214,7 @@
             // MaxTweets
             // 
             this.MaxTweets.Location = new System.Drawing.Point(332, 111);
-            this.MaxTweets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaxTweets.Margin = new System.Windows.Forms.Padding(2);
             this.MaxTweets.Name = "MaxTweets";
             this.MaxTweets.Size = new System.Drawing.Size(134, 20);
             this.MaxTweets.TabIndex = 47;
@@ -1297,7 +1297,7 @@
             "Uyghur (ئۇيغۇرچە)",
             "Vietnamese (Tiếng Việt)"});
             this.Lang.Location = new System.Drawing.Point(88, 110);
-            this.Lang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Lang.Margin = new System.Windows.Forms.Padding(2);
             this.Lang.Name = "Lang";
             this.Lang.Size = new System.Drawing.Size(134, 21);
             this.Lang.TabIndex = 45;
@@ -1315,7 +1315,7 @@
             // Within
             // 
             this.Within.Location = new System.Drawing.Point(332, 66);
-            this.Within.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Within.Margin = new System.Windows.Forms.Padding(2);
             this.Within.Name = "Within";
             this.Within.Size = new System.Drawing.Size(134, 20);
             this.Within.TabIndex = 43;
@@ -1333,7 +1333,7 @@
             // Near
             // 
             this.Near.Location = new System.Drawing.Point(88, 68);
-            this.Near.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Near.Margin = new System.Windows.Forms.Padding(2);
             this.Near.Name = "Near";
             this.Near.Size = new System.Drawing.Size(134, 20);
             this.Near.TabIndex = 41;
@@ -1341,7 +1341,7 @@
             // Until
             // 
             this.Until.Location = new System.Drawing.Point(332, 28);
-            this.Until.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Until.Margin = new System.Windows.Forms.Padding(2);
             this.Until.Name = "Until";
             this.Until.Size = new System.Drawing.Size(134, 20);
             this.Until.TabIndex = 15;
@@ -1350,7 +1350,7 @@
             // Since
             // 
             this.Since.Location = new System.Drawing.Point(88, 28);
-            this.Since.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Since.Margin = new System.Windows.Forms.Padding(2);
             this.Since.Name = "Since";
             this.Since.Size = new System.Drawing.Size(134, 20);
             this.Since.TabIndex = 14;
@@ -1391,7 +1391,7 @@
             this.button17.BackColor = System.Drawing.Color.Yellow;
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button17.Location = new System.Drawing.Point(199, 13);
-            this.button17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button17.Margin = new System.Windows.Forms.Padding(2);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(75, 51);
             this.button17.TabIndex = 14;
@@ -1402,7 +1402,7 @@
             // button18
             // 
             this.button18.Location = new System.Drawing.Point(1096, 628);
-            this.button18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button18.Margin = new System.Windows.Forms.Padding(2);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(71, 80);
             this.button18.TabIndex = 14;
@@ -1413,7 +1413,7 @@
             // button19
             // 
             this.button19.Location = new System.Drawing.Point(1175, 628);
-            this.button19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button19.Margin = new System.Windows.Forms.Padding(2);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(71, 80);
             this.button19.TabIndex = 14;
@@ -1432,13 +1432,24 @@
             this.groupBox7.Controls.Add(this.label18);
             this.groupBox7.Controls.Add(this.speed);
             this.groupBox7.Location = new System.Drawing.Point(629, 628);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(463, 80);
             this.groupBox7.TabIndex = 15;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Config";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Json",
+            "CSV"});
+            this.comboBox1.Location = new System.Drawing.Point(5, 15);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(91, 21);
+            this.comboBox1.TabIndex = 44;
             // 
             // label19
             // 
@@ -1486,7 +1497,7 @@
             "19",
             "20"});
             this.comboBox2.Location = new System.Drawing.Point(369, 40);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(92, 21);
             this.comboBox2.TabIndex = 1;
@@ -1494,7 +1505,7 @@
             // button20
             // 
             this.button20.Location = new System.Drawing.Point(5, 46);
-            this.button20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button20.Margin = new System.Windows.Forms.Padding(2);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(92, 30);
             this.button20.TabIndex = 0;
@@ -1505,7 +1516,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(280, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(75, 20);
             this.textBox1.TabIndex = 43;
@@ -1524,23 +1535,12 @@
             // 
             this.speed.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.speed.Location = new System.Drawing.Point(101, 46);
-            this.speed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.speed.Margin = new System.Windows.Forms.Padding(2);
             this.speed.Name = "speed";
             this.speed.Size = new System.Drawing.Size(94, 19);
             this.speed.TabIndex = 32;
             this.speed.Text = "100";
             this.speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Json",
-            "CSV"});
-            this.comboBox1.Location = new System.Drawing.Point(5, 15);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(91, 21);
-            this.comboBox1.TabIndex = 44;
             // 
             // Main
             // 
@@ -1558,7 +1558,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1266, 761);
             this.Name = "Main";

@@ -13,7 +13,8 @@ namespace Collector.Utilities
         public String Criteria = "";
         public ScrapeType function;
         public TwitterCreiteriaQuestion Query;
-        private String URL = "https://twitter.com/i/search/timeline?f={0}&q={1}&src=typd&max_position={2}";
+        string protocol = "https://";
+        private String URL = "twitter.com/i/search/timeline?f={0}&q={1}&src=typd&max_position={2}";
         private String ModifiedURL;
 
         public String BuildSearchURL(ScrapeType function = ScrapeType.tweets, string MaxPosition = "", bool ForceCriteriaRefresh = false, String URL = "", bool ReplaceURL = false)
@@ -36,7 +37,7 @@ namespace Collector.Utilities
 
             Uri myUri = new Uri(ModifiedURL, UriKind.RelativeOrAbsolute);
 
-            ModifiedURL = myUri.ToString().Replace(" ", "%20");
+            ModifiedURL = protocol + myUri.ToString().Replace(" ", "%20").Replace("#", "%23").Replace(":", "%3A");
 
             return ModifiedURL;
         }

@@ -10,3 +10,16 @@ F:\Project\TwitterHelper\TwitterHelper\Collector\bin\Release\Newtonsoft.Json.xml
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.csproj.CopyComplete
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.exe
 F:\Project\TwitterHelper\TwitterHelper\Collector\obj\Release\Collector.pdb
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\Collector.exe.config
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\Collector.exe
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\Collector.pdb
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\HtmlAgilityPack.dll
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\Newtonsoft.Json.dll
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\HtmlAgilityPack.pdb
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\HtmlAgilityPack.xml
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\bin\Release\Newtonsoft.Json.xml
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Release\Collector.csprojAssemblyReference.cache
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Release\Collector.csproj.CoreCompileInputs.cache
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Release\Collector.csproj.CopyComplete
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Release\Collector.exe
+C:\Users\rbhosalea\Documents\GitHub\OrgneatUI\Collector\obj\Release\Collector.pdb

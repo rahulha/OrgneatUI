@@ -37,7 +37,7 @@ namespace Collector.Utilities
 
             Uri myUri = new Uri(ModifiedURL, UriKind.RelativeOrAbsolute);
 
-            ModifiedURL = protocol + myUri.ToString().Replace(" ", "%20").Replace("#", "%23").Replace(":", "%3A");
+            ModifiedURL = protocol + myUri.ToString().Replace("http://","").Replace("https://", "").Replace(" ", "%20").Replace("#", "%23").Replace(":", "%3A");
 
             return ModifiedURL;
         }

@@ -327,10 +327,11 @@ namespace Collector
 
             await Task.Run(() =>
             {
-
+                int waitTime = 1;
 
                 while (Run && !this.Cancel)
                 {
+
                     try
                     {
                         //Download json from Twitter
@@ -425,11 +426,14 @@ namespace Collector
                             this.WrongHasitems = 0;
 
 
-
+                        waitTime = 1;
                     }
                     catch (Exception ex)
                     {
-                        workerException = ex;
+                        workerException = new Exception(this.MyNumber.ToString() + " Exception occured, sleeping thread for " + waitTime.ToString());//, ex
+
+                        System.Threading.Thread.Sleep(waitTime * 1000);
+                        waitTime += 1;
                     }
                     finally
                     {
@@ -437,9 +441,13 @@ namespace Collector
 
                         TweetsProcessed.BeginInvoke(this, TweetProcessedResult, EndTweetProcessedEvent, null);
 
+                        workerException = null;
+
                     }
 
                 }
+
+
 
                 if (this.fm != null)
                     this.fm.CloseAsync();

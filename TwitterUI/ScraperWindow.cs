@@ -38,7 +38,15 @@ namespace TwitterUI
             {
                 var d = DateTime.Now;
 
-                txtLog.Text += d.ToShortDateString() + " - " + d.ToShortTimeString() + " :: " + Text + Environment.NewLine;
+                txtLog.Text = d.ToShortDateString() + " - " + d.ToShortTimeString() + " :: " + Text + Environment.NewLine + txtLog.Text;
+
+                if (Text.Split(' ').Length > 2 && int.TryParse(Text.Split(' ')?[2] ?? "", out int idx))
+                {
+                    UpdateListView(idx.ToString(), 3, Text);
+                }
+
+
+                //txtLog.ScrollToCaret();
             });
         }
 
@@ -57,6 +65,7 @@ namespace TwitterUI
                 ListViewItem itm = new ListViewItem(i.ToString());
                 itm.SubItems.Add("0");
                 itm.SubItems.Add("Calculating");
+                itm.SubItems.Add("running");
                 listView1.Items.Add(itm);
             });
 
@@ -110,6 +119,9 @@ namespace TwitterUI
             InvokeUI(() =>
             {
                 Log("Scraper number " + e.Number + " done");
+                var d = DateTime.Now;
+
+                textBox1.Text = d.ToShortDateString() + " - " + d.ToShortTimeString() + " :: " + "Scraper number " + e.Number + " done" + Environment.NewLine + textBox1.Text;
 
             });
 
